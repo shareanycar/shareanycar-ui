@@ -1,0 +1,70 @@
+<div class="form-horizontal">
+  	  <div class="col-sm-offset-2 ">
+		  <h2  class="col-sm-offset-2 col-sm-10">
+		  	Please sign up
+		  </h2>
+		  
+		  <div class="form-group">
+		  	<label class="col-sm-2 control-label">First Name: </label>
+		  	<div class="col-sm-4">
+		  	<input class="form-control"  [(ngModel)]="owner.firstName" placeholder="first name">
+		  	</div>
+		  </div>
+		
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">Last Name: </label>
+		    <div class="col-sm-4">
+		    <input class="form-control"  [(ngModel)]="owner.lastName" placeholder="last name">
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">Country: </label>
+		    <div class="col-sm-4">
+		    <input class="form-control"  [(ngModel)]="owner.country" placeholder="country">
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">City: </label>
+		    <div class="col-sm-4">
+		    <input class="form-control"  [(ngModel)]="owner.city" placeholder="city">
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">Phone: </label>
+		    <div class="col-sm-4">
+		    <input class="form-control"  [(ngModel)]="owner.phone" placeholder="phone">
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">Email: </label>
+		    <div class="col-sm-4">
+		    <input class="form-control"  [(ngModel)]="owner.email" placeholder="email">
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">Password: </label>
+		    <div class="col-sm-4">
+		    <input type="password" class="form-control"  [(ngModel)]="owner.password" placeholder="password">
+		    </div>
+		  </div> 
+		  
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">Confirm Password: </label>
+		    <div class="col-sm-4">
+		    <input type="password" class="form-control"  [(ngModel)]="owner.password" placeholder="password">
+		    </div>
+		  </div> 
+		  
+		  <div class="form-group">
+		   	<div class="col-sm-offset-2  col-sm-10">
+		  		<button class="btn btn-primary"  (click)="signup()">Sign up</button>
+		  	</div>
+		  </div>
+		  <p>{{errorMsg}}</p>
+	</div>
+</div>

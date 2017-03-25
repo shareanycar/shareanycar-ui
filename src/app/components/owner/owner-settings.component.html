@@ -1,0 +1,76 @@
+
+<div *ngIf="owner">
+<div class="form-horizontal">
+  	  <div class="col-sm-offset-2 ">
+
+		  <h2 class="col-sm-offset-2 col-sm-10">
+			Change settings
+		  </h2>
+		  
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">First Name: </label>
+		    <div class="col-sm-4">
+		    	<input class="form-control" [(ngModel)]="owner.firstName" placeholder="first name">
+		    </div>
+		  </div>
+		
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">Last Name: </label>
+		    <div class="col-sm-4">
+		    	<input class="form-control" [(ngModel)]="owner.lastName" placeholder="last name">
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">Country: </label>
+		    <div class="col-sm-4">
+		    	<input class="form-control" [(ngModel)]="owner.country" placeholder="country">
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">City: </label>
+		    <div class="col-sm-4">
+		    	<input class="form-control" [(ngModel)]="owner.city" placeholder="city">
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		    <label class="col-sm-2 control-label">Phone: </label>
+		    <div class="col-sm-4">
+		    	<input class="form-control" [(ngModel)]="owner.phone" placeholder="phone">
+		    </div>
+		  </div>
+		  
+		  <div class="form-group">
+		  	<label class="col-sm-2 control-label">Old Password:</label>
+		  	<div class="col-sm-4">
+		  		<input class="form-control" type="password" [(ngModel)]="oldPassword" placeholder="old password">
+		  	</div>
+		  </div>
+		  
+		  <div class="form-group">
+		  	<label class="col-sm-2 control-label">New Password:</label>
+		  	<div class="col-sm-4">
+		  		<input class="form-control" type="password" [(ngModel)] = "newPassword" placeholder="new password">
+		  	</div>
+		  </div>
+		  
+		  <div class="form-group">
+		  	<label class="col-sm-2 control-label">Confirm New Password:</label>
+		  	<div class="col-sm-4">
+		  		<input class="form-control" type="password" [(ngModel)]="confirmNewPassword" placeholder="confirm new password">
+		  	</div>
+		  </div>
+		
+		  <div class="form-group">
+			 <div class="col-sm-offset-2  col-sm-10">
+		 		<button class="btn btn-primary" (click)="update()">update account</button>
+		 	</div>
+		 </div>
+		</div>  
+		
+		 <p *ngIf="errorMsg"> {{errorMsg}}</p>
+		 <p *ngIf="errorMsgPassword"> {{errorMsgPassword}}</p>
+	</div>
+ </div>

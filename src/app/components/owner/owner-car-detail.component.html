@@ -1,0 +1,67 @@
+<div *ngIf="car">
+<div class="form-horizontal">
+  	  <div class="col-sm-offset-2 ">
+			<h2 class="col-sm-offset-2 col-sm-10"> Car Details</h2>
+		  	  <div class="form-group">
+			    <label class="col-sm-2 control-label">Name: </label>
+			     <div class="col-sm-4">
+			    	<input class="form-control" [(ngModel)]="car.name" placeholder="name">
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
+
+			    <label class="col-sm-2 control-label">Brand: </label>
+			     <div class="col-sm-4">
+			    	<input class="form-control" [(ngModel)]="car.brand" placeholder="brand">
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">Model: </label>
+			     <div class="col-sm-4">
+			    	<input class="form-control" [(ngModel)]="car.model" placeholder="brand">
+			    </div>
+			  </div>
+			
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">Description: </label>
+			     <div class="col-sm-4">
+			    	<input class="form-control" [(ngModel)]="car.description" placeholder="description">
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">Year: </label>
+			     <div class="col-sm-4">
+			    	<input class="form-control" [(ngModel)]="car.year" placeholder="year">
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">Country: </label>
+			     <div class="col-sm-4">
+			    	<input class="form-control" [(ngModel)]="car.country" placeholder="country">
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">City: </label>
+			    <div class="col-sm-4">
+			    	<input class="form-control" [(ngModel)]="car.city" placeholder="city">
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
+			  	<div class="col-sm-offset-2  col-sm-10">
+				  <button  class="btn btn-primary" *ngIf="isNew" (click)="_create()">create</button>
+				  <button  class="btn btn-primary" *ngIf="!isNew" (click)="_update()">update</button>
+				  <button  class="btn btn-default" (click)="back()">back</button> 
+				  <button  class="btn btn-link" *ngIf="!isNew" (click)="_delete()">delete</button>
+				  
+				 </div>
+			  </div>
+			   <p>{{errorMsg}}</p>
+	   		</div>
+	   </div>
+</div>	  
