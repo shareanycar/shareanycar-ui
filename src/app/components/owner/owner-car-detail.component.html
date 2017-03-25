@@ -52,6 +52,12 @@
 			    </div>
 			  </div>
 			  
+			  <div *ngIf="!isNew" class="form-group">
+			  	<div class="col-sm-offset-2  col-sm-10">
+			  		<a class="btn btn-defaul" [routerLink]="['image']">add car images</a>
+			  	</div>
+			  </div>
+			  
 			  <div class="form-group">
 			  	<div class="col-sm-offset-2  col-sm-10">
 				  <button  class="btn btn-primary" *ngIf="isNew" (click)="_create()">create</button>

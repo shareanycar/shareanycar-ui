@@ -1,2 +1,11 @@
-<a *ngFor="let car of cars"  [routerLink]="['/owner/cardetail', car.id]"> {{car.name}}<br /></a>
+<div class="col-sm-offset-2 col-sm-8"  *ngFor="let car of cars" >
+  <a  [routerLink]="['/owner/cardetail', car.id]" > 
+  	<div class="panel panel-default">
+  		<div class="panel-heading">{{car.name}} {{car.brand}} {{car.model}}</div>
+  			<div class="panel-body">
+    			{{car.description}}
+  			</div>
+	</div>
+  </a>
+</div>
 <p>{{errorMsg}}</p>

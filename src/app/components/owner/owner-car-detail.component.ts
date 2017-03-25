@@ -52,7 +52,7 @@ export class OwnerCarDetailComponent implements OnInit {
   _create(): void{
       this.carService
       .create(this.car)
-      .then(() => this.errorMsg = "car has been created")
+      .then(() => this.router.navigate(['owner/cars']))
       .catch(() => this.errorMsg = "problem creating car"); 
   }
   

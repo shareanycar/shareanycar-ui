@@ -4,7 +4,6 @@ import {Observable} from "rxjs/Observable";
 import {OwnerService} from '../../services/owner.service';
 import {UrlService} from '../../services/url.service';
 
-
 @Component({
   moduleId: module.id,
   selector: 'app-owner-login',
@@ -21,8 +20,6 @@ export class OwnerLoginComponent implements OnInit {
   constructor(private ownerService: OwnerService, private router: Router, private urlService: UrlService) { }
 
   ngOnInit() {}
-  
-  
   
   login(): void{
       this.ownerService.auth(this.email, this.password)

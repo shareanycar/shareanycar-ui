@@ -22,6 +22,7 @@ import { OwnerLoginComponent } from './components/owner/owner-login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { OwnerSettingsComponent } from './components/owner/owner-settings.component';
+import { OwnerCarImageComponent } from './components/owner/owner-car-image.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { OwnerSettingsComponent } from './components/owner/owner-settings.compon
     OwnerLoginComponent,
     HeaderComponent,
     HomeComponent,
-    OwnerSettingsComponent
+    OwnerSettingsComponent,
+    OwnerCarImageComponent
     
   ],
   imports: [
