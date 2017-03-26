@@ -9,7 +9,13 @@ export class UrlService {
   header: Headers = new Headers({
                                   'Content-Type': 'application/json'
                                   });
-  
+
+  token: string;
+
+  authToken(): string{
+      return this.token;
+  } 
+
   constructor() { }
   
   ownerCRUD(): string {
@@ -39,8 +45,13 @@ export class UrlService {
   carDelete(id: number){
       return this.baseUrl + "car/" + id;
   }
+  
   carAll(): string {
       return this.baseUrl + "car/all";
+  }
+  
+  carImageUpload(id: number): string {
+      return this.baseUrl + "image/car/" + id ;
   }
   
   customerAuth(): string {
@@ -55,17 +66,23 @@ export class UrlService {
       return this.header;
   }
   
+  
+  
   headerAddAuthToken(token: string): void {
       this.header = new Headers({
           'Content-Type': 'application/json',
           'Authorization': 'Bearer ' + token
       });
+      this.token = 'Bearer ' + token;
+      
   }
   
   clearHeader(): void{
       this.header = new Headers({
           'Content-Type': 'application/json'
       });
+      
+      this.token = '';
   }
   
 }

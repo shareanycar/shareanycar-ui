@@ -1,3 +1,5 @@
-<p>
-  owner-car-image works!
-</p>
+<input type="file" ng2FileSelect [uploader]="uploader" />
+<button type="button" class="btn btn-success btn-s"
+                        (click)="uploadImage()" [disabled]="!uploader.getNotUploadedItems().length">
+                    <span class="glyphicon glyphicon-upload"></span> Upload all
+</button>

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FileSelectDirective } from 'ng2-file-upload';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -28,6 +29,7 @@ import { OwnerCarImageComponent } from './components/owner/owner-car-image.compo
 @NgModule({
   declarations: [
     AppComponent,
+    FileSelectDirective,
     OwnerComponent,
     CarComponent,
     OwnerSignupComponent,
