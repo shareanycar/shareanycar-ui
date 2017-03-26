@@ -4,6 +4,9 @@
 /dist
 /tmp
 
+#upload
+src/assets/upload
+
 # dependencies
 /node_modules
 
