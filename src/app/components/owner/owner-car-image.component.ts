@@ -43,7 +43,7 @@ export class OwnerCarImageComponent implements OnInit {
 
     uploadImage(): any{
         this.uploader.uploadAll();
-        //this.location.back();
+        this.location.back();
         
     }
 /*

@@ -7,4 +7,5 @@ export class Car{
     city: string;
     brand: string;
     model: string;
+    mainImageUrl: string;
 }
