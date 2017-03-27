@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Car} from '../dto/car';
 import { Headers, Http } from '@angular/http';
 import {UrlService} from './url.service';
+import {Image} from '../dto/image';
 
 @Injectable()
 export class CarService {
@@ -47,6 +48,14 @@ export class CarService {
           .then(res => res.json())
           .catch(this.handleError);         
    }
+  
+  carImages(id: number): Promise<Image[]> {
+      return this.http
+      .get(this.urlService.carImages(id), {headers: this.urlService.headers()})
+      .toPromise()
+      .then(res => res.json())
+      .catch(this.handleError);
+  }
   
   private handleError(error: any): Promise<any> {
       console.error('An error occurred', error); // for demo purposes only
