@@ -13,18 +13,18 @@
 			<div class="col-sm-offset-2  col-sm-10">
 				<button type="button" class="btn btn-success" (click)="this.uploader.uploadAll()"
 					[disabled]="!uploader.getNotUploadedItems().length">Upload Image</button>
+				<button type="button" class="btn btn-default" (click)="this.location.back()">Back</button>
 			</div>
 		</div>
 	</div>
 
 	<div class="row">
 		<div *ngFor="let image of images" class="col-xs-6 col-md-3">
-			<a href="#" class="thumbnail">
-				<img src="{{image.url}}" alt="image not found" />
+			<a [routerLink]="[image.id]" class="thumbnail">
+				<img src="{{image.urlSmall}}" alt="image not found" />
 			</a>
 		</div>
 	</div>
-
 
 </form>
 

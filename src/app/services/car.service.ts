@@ -49,13 +49,7 @@ export class CarService {
           .catch(this.handleError);         
    }
   
-  carImages(id: number): Promise<Image[]> {
-      return this.http
-      .get(this.urlService.carImages(id), {headers: this.urlService.headers()})
-      .toPromise()
-      .then(res => res.json())
-      .catch(this.handleError);
-  }
+  
   
   private handleError(error: any): Promise<any> {
       console.error('An error occurred', error); // for demo purposes only

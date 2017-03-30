@@ -2,5 +2,7 @@ export class Image{
     id: number;
     carId: string;
     fileName: string;
-    url: string;
+    urlSmall: string;
+    urlLarge: string;
+    urlOrig: string;
 }

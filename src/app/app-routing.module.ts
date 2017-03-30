@@ -8,6 +8,7 @@ import { OwnerLoginComponent }      from './components/owner/owner-login.compone
 import { OwnerCarDetailComponent }      from './components/owner/owner-car-detail.component';
 import { OwnerCarListComponent }      from './components/owner/owner-car-list.component';
 import {OwnerCarImageComponent} from './components/owner/owner-car-image.component';
+import {OwnerImageDetailComponent} from './components/owner/owner-image-detail.component';
 import {HeaderComponent} from './components/header/header.component';
 import {HomeComponent} from './components/home/home.component';
 
@@ -23,10 +24,11 @@ const ownerRoutes: Routes = [
                         { path: 'owner/signup',  component: OwnerSignupComponent },
                         { path: 'owner/login',  component: OwnerLoginComponent },
                         { path: 'owner/addcar',  component: OwnerCarDetailComponent },
-                        { path: 'owner/cardetail/:id',  component: OwnerCarDetailComponent },
+                        { path: 'owner/car/:id',  component: OwnerCarDetailComponent },
                         { path: 'owner/cars',  component: OwnerCarListComponent },
                         { path: 'owner/settings',  component: OwnerSettingsComponent },
-                        { path: 'owner/cardetail/:id/image',  component: OwnerCarImageComponent },
+                        { path: 'owner/car/:id/image',  component: OwnerCarImageComponent },
+                        { path: 'owner/car/:carId/image/:imageId',  component: OwnerImageDetailComponent },
                         
                       ];
 

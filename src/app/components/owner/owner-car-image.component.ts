@@ -5,7 +5,8 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { OwnerService } from '../../services/owner.service';
 import { Location } from '@angular/common';
 import {Image} from '../../dto/Image';
-import {CarService} from '../../services/car.service';
+import {ImageService} from '../../services/image.service';
+
 
 
 @Component( {
@@ -26,11 +27,11 @@ export class OwnerCarImageComponent implements OnInit {
         private router: Router,
         private ownerService: OwnerService,
         private location: Location,
-        private carService: CarService
+        private imageService: ImageService
     ) { }
 
     fetchImages(id){
-        this.carService.carImages(id)
+        this.imageService.carImages(id)
         .then(images => this.images = images)
         .catch(() => console.log('can not fetch images'));
     }

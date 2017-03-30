@@ -1,5 +1,5 @@
 <div class="col-sm-offset-2 col-sm-8"  *ngFor="let car of cars" >
-  <a  [routerLink]="['/owner/cardetail', car.id]" > 
+  <a  [routerLink]="['/owner/car', car.id]" > 
   	<div class="panel panel-default">
   		<div class="panel-heading">{{car.name}} {{car.brand}} {{car.model}}</div>
   			<img src="{{car.mainImageUrl}}" alt="no image set">

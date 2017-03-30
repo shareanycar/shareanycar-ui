@@ -50,6 +50,11 @@ export class UrlService {
         return this.baseUrl + "image/car/" + id;
     }
 
+    carImage(carId: number, imageId: number): string{
+        return this.baseUrl + "image/" + imageId + "/car/" + carId;
+    }
+    
+    
     carAll(): string {
         return this.baseUrl + "car/all";
     }

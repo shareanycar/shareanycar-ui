@@ -17,6 +17,7 @@ import { CarComponent } from './components/car/car.component';
 
 import {OwnerService} from './services/owner.service';
 import {CarService} from './services/car.service';
+import {ImageService} from './services/image.service';
 import {UrlService} from './services/url.service';
 
 import { OwnerLoginComponent } from './components/owner/owner-login.component';
@@ -24,6 +25,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { OwnerSettingsComponent } from './components/owner/owner-settings.component';
 import { OwnerCarImageComponent } from './components/owner/owner-car-image.component';
+import { OwnerImageDetailComponent } from './components/owner/owner-image-detail.component';
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import { OwnerCarImageComponent } from './components/owner/owner-car-image.compo
     HeaderComponent,
     HomeComponent,
     OwnerSettingsComponent,
-    OwnerCarImageComponent
+    OwnerCarImageComponent,
+    OwnerImageDetailComponent
     
   ],
   imports: [
@@ -51,6 +54,7 @@ import { OwnerCarImageComponent } from './components/owner/owner-car-image.compo
   providers: [          
     OwnerService,
     CarService,
+    ImageService,
     UrlService
   ],
   bootstrap: [

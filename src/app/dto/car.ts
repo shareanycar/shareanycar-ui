@@ -5,7 +5,8 @@ export class Car{
     year: number;
     country: string;
     city: string;
-    brand: string;
-    model: string;
+    transmissionType: string;
+    carType: string;
+    numberOfSeats: number;
     mainImageUrl: string;
 }
