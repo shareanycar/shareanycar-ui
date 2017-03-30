@@ -1,4 +1,24 @@
 <div *ngIf="image">
-	<button (click)="this.location.back()"> back </button>
-	<img alt="car image" src="{{image.urlLarge}}"> 
+	<form class="form-horizontal">
+		<div class="col-sm-offset-2">
+			<h2 class="col-sm-offset-2 col-sm-10">Image Detail</h2>
+
+			<div class="form-group">
+				<div class="col-sm-offset-2  col-sm-10">
+					<button type="button" class="btn btn-primary" (click)="setAsMainImage()">set as
+						main image</button>
+						
+					<button type="button" class="btn btn-default" (click)="deleteImage()">delete
+						image</button>
+						
+					<button type="button" class="btn btn-default" (click)="this.location.back()">back</button>
+				</div>
+			</div>
+
+			<div class="col-sm-offset-1">
+				<img alt="car image" src="{{image.urlLarge}}" />
+			</div>
+
+		</div>
+	</form>
 </div>

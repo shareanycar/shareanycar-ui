@@ -31,9 +31,29 @@ export class OwnerImageDetailComponent implements OnInit {
       
       this.activatedRoute.params.subscribe(
               (params: Params)=> {
-                  this.imageService.carImage(params['carId'], params['imageId'])
+                  this.imageService.image(params['carId'], params['imageId'])
                   .then(image => this.image = image)
                   .catch(() => this.errorMsg = "can not fetch image")
+                  }
+               );
+  }
+  
+  setAsMainImage(){
+      this.activatedRoute.params.subscribe(
+              (params: Params)=> {
+                  this.imageService.setAsDefault(params['carId'], params['imageId'])
+                  .then(image => this.image = image)
+                  .catch(() => this.errorMsg = "can not set image as main")
+                  }
+               );
+  }
+  
+  deleteImage(){
+      this.activatedRoute.params.subscribe(
+              (params: Params)=> {
+                  this.imageService.delete(params['carId'], params['imageId'])
+                  .then(image => this.image = image)
+                  .catch(() => this.errorMsg = "can not delete image")
                   }
                );
   }

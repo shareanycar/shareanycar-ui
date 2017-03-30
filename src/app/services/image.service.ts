@@ -8,7 +8,7 @@ export class ImageService {
 
   constructor(private http: Http, private urlService: UrlService) { }
   
-  carImages(carId: number): Promise<Image[]> {
+  images(carId: number): Promise<Image[]> {
       return this.http
       .get(this.urlService.carImages(carId), {headers: this.urlService.headers()})
       .toPromise()
@@ -16,11 +16,25 @@ export class ImageService {
       .catch(this.handleError);
   }
   
-  carImage(carId: number, imageId: number): Promise<Image>{
+  image(carId: number, imageId: number): Promise<Image>{
       return this.http
       .get(this.urlService.carImage(carId, imageId), {headers: this.urlService.headers()})
       .toPromise()
       .then(res => res.json())
+      .catch(this.handleError);
+  }
+  
+  setAsDefault(carId: number, imageId: number): Promise<any>{
+      return this.http
+      .put(this.urlService.carImage(carId, imageId),{}, {headers: this.urlService.headers()})
+      .toPromise()
+      .catch(this.handleError);
+  }
+  
+  delete(carId: number, imageId: number): Promise<any>{
+      return this.http
+      .delete(this.urlService.carImage(carId, imageId), {headers: this.urlService.headers()})
+      .toPromise()
       .catch(this.handleError);
   }
   

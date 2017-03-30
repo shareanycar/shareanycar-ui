@@ -31,7 +31,7 @@ export class OwnerCarImageComponent implements OnInit {
     ) { }
 
     fetchImages(id){
-        this.imageService.carImages(id)
+        this.imageService.images(id)
         .then(images => this.images = images)
         .catch(() => console.log('can not fetch images'));
     }
