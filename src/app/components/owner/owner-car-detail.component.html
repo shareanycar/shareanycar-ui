@@ -10,7 +10,13 @@
 			  </div>
 			  
 			  <div class="form-group">
-
+			    <label class="col-sm-2 control-label">Description: </label>
+			     <div class="col-sm-4">
+			    	<textarea class="form-control" [(ngModel)]="car.description" placeholder="description" ></textarea>
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
 			    <label class="col-sm-2 control-label">Transmission: </label>
 			     <div class="col-sm-4">
 			    	<input class="form-control" [(ngModel)]="car.transmissionType" placeholder="transmission type">
@@ -18,23 +24,16 @@
 			  </div>
 			  
 			  <div class="form-group">
-			    <label class="col-sm-2 control-label">Car Type: </label>
+			    <label class="col-sm-2 control-label">Fuel: </label>
 			     <div class="col-sm-4">
-			    	<input class="form-control" [(ngModel)]="car.carType" placeholder="car type">
+			    	<input class="form-control" [(ngModel)]="car.fuelType" placeholder="fuel type">
 			    </div>
 			  </div>
 			  
 			  <div class="form-group">
-			    <label class="col-sm-2 control-label">Number of Seats: </label>
+			    <label class="col-sm-2 control-label">Mileage: </label>
 			     <div class="col-sm-4">
-			    	<input class="form-control" [(ngModel)]="car.numberOfSeats" placeholder="number of seats">
-			    </div>
-			  </div>
-			
-			  <div class="form-group">
-			    <label class="col-sm-2 control-label">Description: </label>
-			     <div class="col-sm-4">
-			    	<input class="form-control" [(ngModel)]="car.description" placeholder="description">
+			    	<input class="form-control" [(ngModel)]="car.mileage" placeholder="mileage">
 			    </div>
 			  </div>
 			  
@@ -46,16 +45,30 @@
 			  </div>
 			  
 			  <div class="form-group">
+			    <label class="col-sm-2 control-label">Number of Seats: </label>
+			     <div class="col-sm-4">
+			    	<input class="form-control" [(ngModel)]="car.numberOfSeats" placeholder="number of seats">
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
+			    <label class="col-sm-2 control-label">Car Type: </label>
+			     <div class="col-sm-4">
+			    	<input class="form-control" [(ngModel)]="car.carType" placeholder="car type">
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
 			    <label class="col-sm-2 control-label">Country: </label>
 			     <div class="col-sm-4">
-			    	<input class="form-control" [(ngModel)]="car.country" placeholder="country">
+			    	<input class="form-control" [(ngModel)]="car.locationCountry" placeholder="country">
 			    </div>
 			  </div>
 			  
 			  <div class="form-group">
 			    <label class="col-sm-2 control-label">City: </label>
 			    <div class="col-sm-4">
-			    	<input class="form-control" [(ngModel)]="car.city" placeholder="city">
+			    	<input class="form-control" [(ngModel)]="car.locationCity" placeholder="city">
 			    </div>
 			  </div>
 			  
