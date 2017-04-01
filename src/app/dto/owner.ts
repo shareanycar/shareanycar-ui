@@ -3,7 +3,7 @@ export class Owner {
     firstName: string;
     lastName: string;
     locationCountry: string;
-    locationCountry: string;
+    locationCity: string;
     phone: string;
     email: string;
     password: string;

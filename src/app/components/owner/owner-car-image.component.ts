@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FileUploader } from 'ng2-file-upload';
-import { UrlService } from '../../services/url.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { OwnerService } from '../../services/owner.service';
 import { Location } from '@angular/common';
 import {Image} from '../../dto/Image';
 import {ImageService} from '../../services/image.service';
+import {AppSettings} from '../../appSettings';
+import {HeaderService} from '../../services/header.service';
 
 
 
@@ -22,7 +23,7 @@ export class OwnerCarImageComponent implements OnInit {
     carId: number;
 
     constructor(
-        private urlService: UrlService,
+        private headerService: HeaderService,
         private activatedRoute: ActivatedRoute,
         private router: Router,
         private ownerService: OwnerService,
@@ -46,7 +47,7 @@ export class OwnerCarImageComponent implements OnInit {
                     this.carId = params['id'];
                     
                     this.uploader = new FileUploader( {
-                        url: this.urlService.carImageUpload( this.carId ), authToken: this.urlService.authToken()
+                        url: AppSettings.API_ENDPOINT + "image/car/" + this.carId, authToken: this.headerService.authToken()
                     });
                     
                    this.uploader.onCompleteAll = () => {

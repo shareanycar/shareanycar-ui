@@ -38,7 +38,7 @@ export class OwnerImageDetailComponent implements OnInit {
                );
   }
   
-  setAsMainImage(){
+  setAsDefault(){
       this.activatedRoute.params.subscribe(
               (params: Params)=> {
                   this.imageService.setAsDefault(params['carId'], params['imageId'])
@@ -48,7 +48,7 @@ export class OwnerImageDetailComponent implements OnInit {
                );
   }
   
-  deleteImage(){
+  _delete(){
       this.activatedRoute.params.subscribe(
               (params: Params)=> {
                   this.imageService.delete(params['carId'], params['imageId'])

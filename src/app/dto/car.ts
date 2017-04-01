@@ -1,13 +1,13 @@
 export class Car{
     id: number;
     name: string;
-    description: string;
-    transmissionType: string;
-    fuelType: string;
+    description: string; 
     mileage: number;
     year: number;   
     numberOfSeats: number;
-    carType: string;
+    carTypeName: string;
+    fuelTypeName: string;
+    transmissionTypeName: string;
     price: number;
     features: string;
     defaultImageUrl: string;

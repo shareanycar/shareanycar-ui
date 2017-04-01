@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {Router} from '@angular/router';
 import {Observable} from "rxjs/Observable";
 import {OwnerService} from '../../services/owner.service';
-import {UrlService} from '../../services/url.service';
+import {HeaderService} from '../../services/header.service';
 
 @Component({
   moduleId: module.id,
@@ -17,7 +17,7 @@ export class OwnerLoginComponent implements OnInit {
   password: string;
   errorMsg: string;
 
-  constructor(private ownerService: OwnerService, private router: Router, private urlService: UrlService) { }
+  constructor(private ownerService: OwnerService, private router: Router,private headerService: HeaderService) { }
 
   ngOnInit() {}
   
@@ -28,7 +28,7 @@ export class OwnerLoginComponent implements OnInit {
   }
   
   success(token: string): void{
-      this.urlService.headerAddAuthToken(token);
+      this.headerService.headerAddAuthToken(token);
       this.ownerService.login();
       this.router.navigate(['owner']);
   }

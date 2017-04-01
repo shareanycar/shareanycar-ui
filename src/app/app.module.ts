@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 
 import { OwnerComponent } from './components/owner/owner.component';
-import { OwnerSignupComponent } from './components/owner/owner-signup.component';
 import { OwnerCarDetailComponent } from './components/owner/owner-car-detail.component';
 import { OwnerCarListComponent } from './components/owner/owner-car-list.component';
 
@@ -18,14 +17,15 @@ import { CarComponent } from './components/car/car.component';
 import {OwnerService} from './services/owner.service';
 import {CarService} from './services/car.service';
 import {ImageService} from './services/image.service';
-import {UrlService} from './services/url.service';
+import {HeaderService} from './services/header.service';
+import {LocationService} from './services/location.service';
 
 import { OwnerLoginComponent } from './components/owner/owner-login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
-import { OwnerSettingsComponent } from './components/owner/owner-settings.component';
 import { OwnerCarImageComponent } from './components/owner/owner-car-image.component';
 import { OwnerImageDetailComponent } from './components/owner/owner-image-detail.component';
+import { OwnerDetailComponent } from './components/owner/owner-detail.component';
 
 
 @NgModule({
@@ -34,15 +34,14 @@ import { OwnerImageDetailComponent } from './components/owner/owner-image-detail
     FileSelectDirective,
     OwnerComponent,
     CarComponent,
-    OwnerSignupComponent,
     OwnerCarDetailComponent,
     OwnerCarListComponent,
     OwnerLoginComponent,
     HeaderComponent,
     HomeComponent,
-    OwnerSettingsComponent,
     OwnerCarImageComponent,
-    OwnerImageDetailComponent
+    OwnerImageDetailComponent,
+    OwnerDetailComponent
     
   ],
   imports: [
@@ -55,7 +54,8 @@ import { OwnerImageDetailComponent } from './components/owner/owner-image-detail
     OwnerService,
     CarService,
     ImageService,
-    UrlService
+    HeaderService,
+    LocationService
   ],
   bootstrap: [
     AppComponent

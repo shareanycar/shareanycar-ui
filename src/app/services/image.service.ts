@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import {Image} from '../dto/image';
-import {UrlService} from './url.service';
 import { Headers, Http } from '@angular/http';
+import {HeaderService} from "./header.service";
+import {AppSettings} from "../appSettings";
 
 @Injectable()
 export class ImageService {
 
-  constructor(private http: Http, private urlService: UrlService) { }
+  constructor(private http: Http, private headerService: HeaderService) { }
   
   images(carId: number): Promise<Image[]> {
       return this.http
-      .get(this.urlService.carImages(carId), {headers: this.urlService.headers()})
+      .get(AppSettings.API_ENDPOINT + "image/car/" + carId, {headers: this.headerService.headers()})
       .toPromise()
       .then(res => res.json())
       .catch(this.handleError);
@@ -18,7 +19,7 @@ export class ImageService {
   
   image(carId: number, imageId: number): Promise<Image>{
       return this.http
-      .get(this.urlService.carImage(carId, imageId), {headers: this.urlService.headers()})
+      .get(AppSettings.API_ENDPOINT + "image/" + imageId + "/car/" + carId, {headers: this.headerService.headers()})
       .toPromise()
       .then(res => res.json())
       .catch(this.handleError);
@@ -26,14 +27,14 @@ export class ImageService {
   
   setAsDefault(carId: number, imageId: number): Promise<any>{
       return this.http
-      .put(this.urlService.carImage(carId, imageId),{}, {headers: this.urlService.headers()})
+      .put(AppSettings.API_ENDPOINT + "image/" + imageId + "/car/" + carId ,{}, {headers: this.headerService.headers()})
       .toPromise()
       .catch(this.handleError);
   }
   
   delete(carId: number, imageId: number): Promise<any>{
       return this.http
-      .delete(this.urlService.carImage(carId, imageId), {headers: this.urlService.headers()})
+      .delete(AppSettings.API_ENDPOINT + "image/" + imageId + "/car/" + carId, {headers: this.headerService.headers()})
       .toPromise()
       .catch(this.handleError);
   }

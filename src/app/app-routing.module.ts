@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CarComponent }   from './components/car/car.component';
 import { OwnerComponent }      from './components/owner/owner.component';
-import { OwnerSettingsComponent }      from './components/owner/owner-settings.component';
-import { OwnerSignupComponent }      from './components/owner/owner-signup.component';
+import { OwnerDetailComponent }      from './components/owner/owner-detail.component';
 import { OwnerLoginComponent }      from './components/owner/owner-login.component';
 import { OwnerCarDetailComponent }      from './components/owner/owner-car-detail.component';
 import { OwnerCarListComponent }      from './components/owner/owner-car-list.component';
@@ -21,12 +20,12 @@ const routes: Routes = [
 
 const ownerRoutes: Routes = [
                         { path: 'owner',  component: OwnerComponent },
-                        { path: 'owner/signup',  component: OwnerSignupComponent },
+                        { path: 'owner/signup',  component: OwnerDetailComponent },
                         { path: 'owner/login',  component: OwnerLoginComponent },
                         { path: 'owner/addcar',  component: OwnerCarDetailComponent },
                         { path: 'owner/car/:id',  component: OwnerCarDetailComponent },
                         { path: 'owner/cars',  component: OwnerCarListComponent },
-                        { path: 'owner/settings',  component: OwnerSettingsComponent },
+                        { path: 'owner/settings',  component: OwnerDetailComponent },
                         { path: 'owner/car/:id/image',  component: OwnerCarImageComponent },
                         { path: 'owner/car/:carId/image/:imageId',  component: OwnerImageDetailComponent },
                         
