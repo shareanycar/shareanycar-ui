@@ -1,12 +1,17 @@
-<div class="col-sm-offset-2 col-sm-8"  *ngFor="let car of cars" >
-  <a  [routerLink]="['/owner/car', car.id]" > 
-  	<div class="panel panel-default">
-  		<div class="panel-heading">{{car.name}}</div>
-  			<img src="{{car.defaultImageUrl}}" alt="no image set">
-  			<div class="panel-body">
-    			{{car.description}}
-  			</div>
-	</div>
-  </a>
+<div class="col-sm-offset-2 col-sm-8" *ngFor="let car of cars">
+	<a [routerLink]="['/owner/car', car.id]">
+		<div class="panel panel-default">
+			<div class="panel-heading">{{car.name}}</div>
+			<div class="panel-body">
+				<div class="col-sm-4">
+					<img src="{{car.defaultImageUrl}}" alt="no image set">
+				</div>
+				<div class=" col-sm-offset-2 col-sm-4">
+					<h4>Description</h4>
+					{{car.description}} 
+				</div>
+			</div>
+		</div>
+	</a>
 </div>
 <p>{{errorMsg}}</p>
