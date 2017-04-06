@@ -1,48 +1,43 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CarComponent }   from './components/car/car.component';
-import { OwnerComponent }      from './components/owner/owner.component';
-import { OwnerDetailComponent }      from './components/owner/owner-detail.component';
-import { OwnerLoginComponent }      from './components/owner/owner-login.component';
-import { OwnerCarDetailComponent }      from './components/owner/owner-car-detail.component';
-import { OwnerCarListComponent }      from './components/owner/owner-car-list.component';
-import {OwnerCarImageComponent} from './components/owner/owner-car-image.component';
-import {OwnerImageDetailComponent} from './components/owner/owner-image-detail.component';
-import {HeaderComponent} from './components/header/header.component';
-import {HomeComponent} from './components/home/home.component';
+import { HeaderComponent } from './components/header.component';
+import { HomeComponent } from './components/home.component';
+import { RegisterComponent } from './components/register.component';
+import { LoginComponent } from './components/login.component';
+import { ListCarComponent } from './components/list-car.component';
+import { ManageComponent } from './components/manage.component';
+import { ManageMenuComponent } from './components/manage-menu.component';
+import { MyCarsComponent } from './components/my-cars.component';
+import {ChangePasswordComponent} from './components/change-password.component';
+import {ProfileComponent} from './components/profile.component';
+import {CarDetailComponent} from './components/car-detail.component';
 
 
 const routes: Routes = [
-                        { path: '', redirectTo: '/home', pathMatch: 'full' },
-                        { path: 'home', component: HomeComponent },
-                        { path: '', outlet:'header' , component: HeaderComponent}
-                        ];
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent },
+    { path: '', outlet: 'header', component: HeaderComponent },
+    { path: 'register', component: RegisterComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'listCar', component: ListCarComponent },    
+    {
+        path: 'manage', component: ManageComponent, children: [
+            { path: '', component: ManageMenuComponent, outlet: 'manage-menu' },
+            { path: 'myCars', component: MyCarsComponent },
+            { path: 'changePassword', component: ChangePasswordComponent },
+            { path: 'profile', component: ProfileComponent },
+            { path: 'carDetail/:id', component: CarDetailComponent },
+           ]
+    }
+];
 
-const ownerRoutes: Routes = [
-                        { path: 'owner',  component: OwnerComponent },
-                        { path: 'owner/signup',  component: OwnerDetailComponent },
-                        { path: 'owner/login',  component: OwnerLoginComponent },
-                        { path: 'owner/addcar',  component: OwnerCarDetailComponent },
-                        { path: 'owner/car/:id',  component: OwnerCarDetailComponent },
-                        { path: 'owner/cars',  component: OwnerCarListComponent },
-                        { path: 'owner/settings',  component: OwnerDetailComponent },
-                        { path: 'owner/car/:id/image',  component: OwnerCarImageComponent },
-                        { path: 'owner/car/:carId/image/:imageId',  component: OwnerImageDetailComponent },
-                        
-                      ];
 
-const carRoutes: Routes = [
-                           { path: 'car',  component: CarComponent}
-                          ];
+@NgModule( {
+    imports: [
+        RouterModule.forRoot( routes )
+    ],
 
-@NgModule({
-    imports: [ 
-               RouterModule.forRoot(routes),
-               RouterModule.forRoot(ownerRoutes),
-               RouterModule.forRoot(carRoutes)
-               ],
-               
-    exports: [ RouterModule ]
-  
+    exports: [RouterModule]
+
 })
 export class AppRoutingModule { }

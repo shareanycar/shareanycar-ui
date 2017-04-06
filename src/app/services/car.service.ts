@@ -15,6 +15,7 @@ export class CarService {
         return this.http
             .post( AppSettings.API_ENDPOINT + "car", JSON.stringify( car ), { headers: this.headerService.headers() })
             .toPromise()
+            .then(res => res.json() )
             .catch( this.handleError );
     }
 
@@ -68,6 +69,22 @@ export class CarService {
     carTypes(): Promise<Property> {
         return this.http
             .get( AppSettings.API_ENDPOINT + "property/car", { headers: this.headerService.headers() })
+            .toPromise()
+            .then( res => res.json() )
+            .catch( this.handleError );
+    }
+    
+    manufacturers(): Promise<Property> {
+        return this.http
+            .get( AppSettings.API_ENDPOINT + "property/manufacturer", { headers: this.headerService.headers() })
+            .toPromise()
+            .then( res => res.json() )
+            .catch( this.handleError );
+    }
+    
+    insurers(): Promise<Property> {
+        return this.http
+            .get( AppSettings.API_ENDPOINT + "property/insurer", { headers: this.headerService.headers() })
             .toPromise()
             .then( res => res.json() )
             .catch( this.handleError );

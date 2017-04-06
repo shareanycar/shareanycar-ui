@@ -8,40 +8,39 @@ import { AppComponent } from './app.component';
 
 import {AppRoutingModule} from './app-routing.module';
 
-import { OwnerComponent } from './components/owner/owner.component';
-import { OwnerCarDetailComponent } from './components/owner/owner-car-detail.component';
-import { OwnerCarListComponent } from './components/owner/owner-car-list.component';
-
-import { CarComponent } from './components/car/car.component';
-
-import {OwnerService} from './services/owner.service';
+import {UserService} from './services/user.service';
 import {CarService} from './services/car.service';
 import {ImageService} from './services/image.service';
 import {HeaderService} from './services/header.service';
 import {LocationService} from './services/location.service';
-
-import { OwnerLoginComponent } from './components/owner/owner-login.component';
-import { HeaderComponent } from './components/header/header.component';
-import { HomeComponent } from './components/home/home.component';
-import { OwnerCarImageComponent } from './components/owner/owner-car-image.component';
-import { OwnerImageDetailComponent } from './components/owner/owner-image-detail.component';
-import { OwnerDetailComponent } from './components/owner/owner-detail.component';
+import { HeaderComponent } from './components/header.component';
+import { HomeComponent } from './components/home.component';
+import { RegisterComponent } from './components/register.component';
+import { LoginComponent } from './components/login.component';
+import { ListCarComponent } from './components/list-car.component';
+import { MyCarsComponent } from './components/my-cars.component';
+import { ManageComponent } from './components/manage.component';
+import { ManageMenuComponent } from './components/manage-menu.component';
+import { ChangePasswordComponent } from './components/change-password.component';
+import { ProfileComponent } from './components/profile.component';
+import { CarDetailComponent } from './components/car-detail.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     FileSelectDirective,
-    OwnerComponent,
-    CarComponent,
-    OwnerCarDetailComponent,
-    OwnerCarListComponent,
-    OwnerLoginComponent,
     HeaderComponent,
     HomeComponent,
-    OwnerCarImageComponent,
-    OwnerImageDetailComponent,
-    OwnerDetailComponent
+    RegisterComponent,
+    LoginComponent,
+    ListCarComponent,
+    MyCarsComponent,
+    ManageComponent,
+    ManageMenuComponent,
+    ChangePasswordComponent,
+    ProfileComponent,
+    CarDetailComponent,
     
   ],
   imports: [
@@ -51,7 +50,7 @@ import { OwnerDetailComponent } from './components/owner/owner-detail.component'
     AppRoutingModule
   ],
   providers: [          
-    OwnerService,
+    UserService,
     CarService,
     ImageService,
     HeaderService,

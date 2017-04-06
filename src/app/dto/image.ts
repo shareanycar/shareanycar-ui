@@ -4,5 +4,5 @@ export class Image{
     fileName: string;
     urlSmall: string;
     urlLarge: string;
-    urlOrig: string;
+    urlMedium: string;
 }

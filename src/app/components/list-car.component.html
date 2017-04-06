@@ -1,0 +1,140 @@
+<div *ngIf="car">
+	<div class="form-horizontal">
+		<div class="col-sm-offset-2 ">
+			<h2 class="col-sm-offset-2 col-sm-10">List your car</h2>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Country:</label>
+				<div class="col-sm-4">
+					<select class="form-control" [(ngModel)]="car.locationCountry" (change)="changeCountry()">
+						<option *ngFor="let country of countries" [ngValue]="country">{{country}}</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">City:</label>
+				<div class="col-sm-4">
+					<select class="form-control" [(ngModel)]="car.locationCity">
+						<option *ngFor="let city of cities" [ngValue]="city">{{city}}</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">License plate number: </label>
+				<div class="col-sm-4">
+					<input class="form-control" [(ngModel)]="car.licensePlateNumber"
+						placeholder="license plate number">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Insurer:</label>
+				<div class="col-sm-4">
+					<select class="form-control" [(ngModel)]="car.insurer">
+						<option *ngFor="let insurer of insurers" [ngValue]="insurer">{{insurer}}</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Manufacturer:</label>
+				<div class="col-sm-4">
+					<select class="form-control" [(ngModel)]="car.manufacturer">
+						<option *ngFor="let manufacturer of manufacturers" [ngValue]="manufacturer">{{manufacturer}}</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Model:</label>
+				<div class="col-sm-4">
+					<input class="form-control" [(ngModel)]="car.modelName" placeholder="model">
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Transmission:</label>
+				<div class="col-sm-4">
+					<select class="form-control" [(ngModel)]="car.transmissionTypeName">
+						<option *ngFor="let transmission of transmissionTypes" [ngValue]="transmission">{{transmission}}</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Year: </label>
+				<div class="col-sm-4">
+					<input class="form-control" [(ngModel)]="car.year" placeholder="year">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Number of Seats: </label>
+				<div class="col-sm-4">
+					<input class="form-control" [(ngModel)]="car.numberOfSeats" placeholder="number of seats">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Car Type:</label>
+				<div class="col-sm-4">
+					<select class="form-control" [(ngModel)]="car.carTypeName">
+						<option *ngFor="let carType of carTypes" [ngValue]="carType">{{carType}}</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Fuel:</label>
+				<div class="col-sm-4">
+					<select class="form-control" [(ngModel)]="car.fuelTypeName">
+						<option *ngFor="let fuel of fuelTypes" [ngValue]="fuel">{{fuel}}</option>
+					</select>
+				</div>
+			</div>
+
+
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Mileage: </label>
+				<div class="col-sm-4">
+					<input class="form-control" [(ngModel)]="car.mileage" placeholder="mileage">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Price: </label>
+				<div class="col-sm-4">
+					<input class="form-control" [(ngModel)]="car.price" placeholder="price">
+				</div>
+			</div>
+
+
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Description: </label>
+				<div class="col-sm-4">
+					<textarea class="form-control" [(ngModel)]="car.description" placeholder="description"></textarea>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Choose file: </label>
+				<div class="col-sm-4">
+					<input type="file" class="form-control" ng2FileSelect [uploader]="uploader" />
+				</div>
+			</div>
+
+
+			<div class="form-group">
+				<div class="col-sm-offset-2  col-sm-10">
+					<button class="btn btn-primary" (click)="this.create()">create</button>
+				</div>
+			</div>
+			<p>{{errorMsg}}</p>
+		</div>
+	</div>
+</div>

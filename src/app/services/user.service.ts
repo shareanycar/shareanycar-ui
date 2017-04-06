@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Owner} from '../dto/owner';
+import {User} from '../dto/user';
 import {Token} from '../dto/token';
 import {Headers, Http } from '@angular/http';
 import {HeaderService} from './header.service';
@@ -7,47 +7,50 @@ import {AppSettings} from '../appSettings';
 
 import 'rxjs/add/operator/toPromise';
 
-
 @Injectable()
-export class OwnerService {
+export class UserService {
 
   loggedIn: boolean = false;
 
-  constructor( private http: Http, private headerService: HeaderService) {}
-  
-  create(owner: Owner): Promise<any>{
+  constructor(private http: Http, private headerService: HeaderService) { }
+
+  create(user: User): Promise<any>{
       return this.http
-      .post(AppSettings.API_ENDPOINT + "owner", JSON.stringify(owner), {headers: this.headerService.headers()})
+      .post(AppSettings.API_ENDPOINT + "user", JSON.stringify(user), {headers: this.headerService.headers()})
+      
       .toPromise()
       .catch(this.handleError);
   }
   
-  update(owner: Owner): Promise<any>{
+  update(user: User): Promise<any>{
       return this.http
-      .put(AppSettings.API_ENDPOINT + "owner", JSON.stringify(owner), {headers: this.headerService.headers()})
+      .put(AppSettings.API_ENDPOINT + "user", JSON.stringify(user), {headers: this.headerService.headers()})     
       .toPromise()
       .catch(this.handleError);
   }
   
-  detail(): Promise<Owner>{
+  
+  detail(): Promise<User>{
       return this.http
-      .get(AppSettings.API_ENDPOINT + "owner", {headers: this.headerService.headers()})
+      .get(AppSettings.API_ENDPOINT + "user", {headers: this.headerService.headers()})
       .toPromise()
-      .then(res => res.json() as Owner)
+      .then(res => res.json() )
       .catch(this.handleError);
   } 
   
+  
+  
   auth(email: string, password: string): Promise<Token>{
       return this.http
-      .post(AppSettings.API_ENDPOINT + "auth/owner", JSON.stringify({email: email, password: password}), {headers: this.headerService.headers()})
+      .post(AppSettings.API_ENDPOINT + "auth/user", JSON.stringify({email: email, password: password}), {headers: this.headerService.headers()})
       .toPromise()
       .then(res => res.json())
       .catch(this.handleError);
   }
   
-  updatePassword(oldPassword: string, newPassword: string): Promise<any>{
+  changePassword(oldPassword: string, newPassword: string): Promise<any>{
       return this.http
-      .put(AppSettings.API_ENDPOINT + "owner/password",JSON.stringify({oldPassword: oldPassword, newPassword: newPassword}), {headers: this.headerService.headers()} )
+      .put(AppSettings.API_ENDPOINT + "user/password",JSON.stringify({oldPassword: oldPassword, newPassword: newPassword}), {headers: this.headerService.headers()} )
       .toPromise()
       .catch(this.handleError);
   }
@@ -69,5 +72,4 @@ export class OwnerService {
       console.error('An error occurred', error); 
       return Promise.reject(error.message || error);
   }
-  
 }

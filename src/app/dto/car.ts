@@ -1,6 +1,6 @@
 export class Car{
     id: number;
-    name: string;
+    licensePlateNumber: string;
     description: string; 
     mileage: number;
     year: number;   
@@ -8,9 +8,13 @@ export class Car{
     carTypeName: string;
     fuelTypeName: string;
     transmissionTypeName: string;
+    manufacturerName: string;
+    modelName: string;
+    insurerName: string;
     price: number;
-    features: string;
-    defaultImageUrl: string;
     locationCountry: string;
     locationCity: string;
+    imageUrlSmall: string;
+    imageUrlMedium: string;
+    imageUrlLarge: string;
 }

@@ -1,0 +1,33 @@
+<div class="col-sm-offset-2 col-sm-8">
+	
+	<table class="table">
+		<thead>
+			<th></th>
+			<th>type</th>
+			<th>price</th>
+			<th>status</th>
+		</thead>
+		<tbody>
+			<tr *ngFor="let car of cars">
+
+				<td>
+					<a [routerLink]="['../carDetail', car.id]">
+						<img [src]="car.imageUrlSmall" alt="no image set">
+						{{car.manufacturerName}}
+						{{car.transmissionTypeName}}
+					</a>
+				</td>
+				<td>
+					<a [routerLink]="['../carDetail', car.id]"> {{car.carTypeName}} </a>
+				</td>
+				<td>
+					<a [routerLink]="['../carDetail', car.id]"> {{car.price}} </a>
+				</td>
+				<td>
+					<a [routerLink]="['../carDetail', car.id]">123 </a>
+				</td>
+
+			</tr>
+		</tbody>
+	</table>
+</div>
