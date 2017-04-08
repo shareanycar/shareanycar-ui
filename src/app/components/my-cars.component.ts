@@ -14,7 +14,7 @@ export class MyCarsComponent implements OnInit {
   cars: Car[];
   
   ngOnInit() {
-      this.carService.getAll()
+      this.carService.userCars()
       .then((cars) => this.cars = cars);
   }
 

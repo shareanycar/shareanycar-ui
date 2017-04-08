@@ -103,5 +103,10 @@ export class CarDetailComponent implements OnInit {
     saveImage(){
         this.uploaderAdditional.uploadAll();
     }
-
+    
+    removeImage(id: number){
+        this.imageService.deleteCarImage(this.carId, id)
+        .then(() => this.images = this.images.filter((elem) => elem.id != id));
+       
+    }
 }

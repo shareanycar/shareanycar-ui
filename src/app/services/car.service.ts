@@ -42,12 +42,20 @@ export class CarService {
             .catch( this.handleError );
     }
 
-    getAll(): Promise<Car[]> {
+    userCars(): Promise<Car[]> {
         return this.http
             .get( AppSettings.API_ENDPOINT + "car/all", { headers: this.headerService.headers() })
             .toPromise()
             .then( res => res.json() )
             .catch( this.handleError );
+    }
+    
+    availableCars(): Promise<Car[]> {
+        return this.http
+        .get(AppSettings.API_ENDPOINT + "car/available", {headers: this.headerService.headers()})
+        .toPromise()
+        .then(res => res.json())
+        .catch(this.handleError);
     }
 
     transmissionTypes(): Promise<Property> {

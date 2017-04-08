@@ -1,0 +1,5 @@
+.img-circle {
+    border-radius: 50%;
+    width:30%; /* you can use % */
+    height: auto;
+}

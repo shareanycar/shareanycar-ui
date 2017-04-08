@@ -17,4 +17,7 @@ export class Car{
     imageUrlSmall: string;
     imageUrlMedium: string;
     imageUrlLarge: string;
+    userFirstName: string;
+    userImageUrlSmall: string;
+    userImageUrlMedium: string;
 }

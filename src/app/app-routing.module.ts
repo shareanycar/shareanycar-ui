@@ -8,9 +8,11 @@ import { ListCarComponent } from './components/list-car.component';
 import { ManageComponent } from './components/manage.component';
 import { ManageMenuComponent } from './components/manage-menu.component';
 import { MyCarsComponent } from './components/my-cars.component';
-import {ChangePasswordComponent} from './components/change-password.component';
-import {ProfileComponent} from './components/profile.component';
-import {CarDetailComponent} from './components/car-detail.component';
+import { ChangePasswordComponent } from './components/change-password.component';
+import { ProfileComponent } from './components/profile.component';
+import { CarDetailComponent } from './components/car-detail.component';
+import { FindCarsComponent } from './components/find-cars.component';
+import { RentCarComponent } from './components/rent-car.component';
 
 
 const routes: Routes = [
@@ -19,7 +21,9 @@ const routes: Routes = [
     { path: '', outlet: 'header', component: HeaderComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'listCar', component: ListCarComponent },    
+    { path: 'listCar', component: ListCarComponent },
+    { path: 'findCars', component: FindCarsComponent },
+    { path: 'rentCar/:id', component: RentCarComponent },
     {
         path: 'manage', component: ManageComponent, children: [
             { path: '', component: ManageMenuComponent, outlet: 'manage-menu' },
@@ -27,7 +31,7 @@ const routes: Routes = [
             { path: 'changePassword', component: ChangePasswordComponent },
             { path: 'profile', component: ProfileComponent },
             { path: 'carDetail/:id', component: CarDetailComponent },
-           ]
+        ]
     }
 ];
 
