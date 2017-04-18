@@ -4,10 +4,14 @@
 
 			<div *ngFor="let car of cars" class="col-sm-4">
 				<a [routerLink]="['/rentCar', car.id]" class="thumbnail">
-					<img [src]="car.imageUrlMedium" alt="...">
+					
+						<img class="grow" [src]="car.imageUrlMedium" alt="...">
+						<h3>{{car.price}} &#x20bd;</h3>
+					
+
 					<div class="caption">
 						<img class="img-circle" [src]="car.userImageUrlSmall" alt="...">
-						{{car.userFirstName}} {{car.manufacturerName}} {{car.modelName}} {{car.price}}
+						{{car.userFirstName}} {{car.manufacturerName}} - {{car.year}}
 
 					</div>
 				</a>
@@ -47,8 +51,8 @@
 			<div class="form-group">
 				<div class="col-sm-8">
 					<label class="control-label">Number of seats:</label>
-					<select class="form-control" [(ngModel)]="seats">
-						<option *ngFor="let carType of carTypes" [ngValue]="carType">{{carType}}</option>
+					<select class="form-control" [(ngModel)]="seat">
+						<option *ngFor="let seat of numberOfSeats" [ngValue]="carType">{{seat}}</option>
 					</select>
 				</div>
 			</div>

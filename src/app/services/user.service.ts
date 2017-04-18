@@ -38,6 +38,13 @@ export class UserService {
       .catch(this.handleError);
   } 
   
+  info(id: number): Promise<User>{
+      return this.http
+      .get(AppSettings.API_ENDPOINT + "user/" + id + "/info", {headers: this.headerService.headers()} )
+      .toPromise()
+      .then(res => res.json())
+      .catch(this.handleError);
+  }
   
   
   auth(email: string, password: string): Promise<Token>{

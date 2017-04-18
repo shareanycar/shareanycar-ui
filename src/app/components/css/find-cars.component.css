@@ -1,5 +1,23 @@
 .img-circle {
-    border-radius: 50%;
-    width:30%; /* you can use % */
-    height: auto;
+	border-radius: 50%;
+	width: 30%; /* you can use % */
+	height: auto;
 }
+
+h3 {
+	position: absolute;
+	top: 7%;
+	left: 65%;
+	width: 20%;
+	background: #6DA1B3;
+	color: white;
+}
+
+.grow {
+	transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+	transform: scale(1.008);
+}
+

@@ -10,6 +10,7 @@ import { CarService } from './services/car.service';
 import { ImageService } from './services/image.service';
 import { HeaderService } from './services/header.service';
 import { LocationService } from './services/location.service';
+import { MessageService } from './services/message.service';
 import { HeaderComponent } from './components/header.component';
 import { HomeComponent } from './components/home.component';
 import { RegisterComponent } from './components/register.component';
@@ -24,6 +25,7 @@ import { CarDetailComponent } from './components/car-detail.component';
 import { DatepickerModule, CarouselModule } from 'ngx-bootstrap';
 import { FindCarsComponent } from './components/find-cars.component';
 import { RentCarComponent } from './components/rent-car.component';
+import { SendMessageComponent } from './components/send-message.component';
 
 
 @NgModule( {
@@ -43,6 +45,7 @@ import { RentCarComponent } from './components/rent-car.component';
         CarDetailComponent,
         FindCarsComponent,
         RentCarComponent,
+        SendMessageComponent,
 
     ],
     imports: [
@@ -58,7 +61,8 @@ import { RentCarComponent } from './components/rent-car.component';
         CarService,
         ImageService,
         HeaderService,
-        LocationService
+        LocationService,
+        MessageService
     ],
     bootstrap: [
         AppComponent

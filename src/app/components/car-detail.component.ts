@@ -15,7 +15,7 @@ import { AppSettings } from '../appSettings';
 
 @Component( {
     selector: 'app-car-detail',
-    templateUrl: './car-detail.component.html',
+    templateUrl: './html/car-detail.component.html',
     styleUrls: ['./css/car-detail.component.css']
 })
 export class CarDetailComponent implements OnInit {

@@ -4,7 +4,7 @@ import {Car} from '../dto/car';
 
 @Component({
   selector: 'app-my-cars',
-  templateUrl: './my-cars.component.html',
+  templateUrl: './html/my-cars.component.html',
   styleUrls: ['./css/my-cars.component.css']
 })
 export class MyCarsComponent implements OnInit {

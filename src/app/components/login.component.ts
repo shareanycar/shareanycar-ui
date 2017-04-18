@@ -5,7 +5,7 @@ import { HeaderService } from '../services/header.service';
 
 @Component( {
     selector: 'app-login',
-    templateUrl: './login.component.html',
+    templateUrl: './html/login.component.html',
     styleUrls: ['./css/login.component.css']
 })
 export class LoginComponent implements OnInit {

@@ -9,7 +9,7 @@ import { FileUploader } from 'ng2-file-upload';
 
 @Component( {
     selector: 'app-profile',
-    templateUrl: './profile.component.html',
+    templateUrl: './html/profile.component.html',
     styleUrls: ['./css/profile.component.css']
 })
 export class ProfileComponent implements OnInit {

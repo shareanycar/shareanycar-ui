@@ -13,6 +13,7 @@ import { ProfileComponent } from './components/profile.component';
 import { CarDetailComponent } from './components/car-detail.component';
 import { FindCarsComponent } from './components/find-cars.component';
 import { RentCarComponent } from './components/rent-car.component';
+import {SendMessageComponent} from './components/send-message.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,7 @@ const routes: Routes = [
             { path: 'changePassword', component: ChangePasswordComponent },
             { path: 'profile', component: ProfileComponent },
             { path: 'carDetail/:id', component: CarDetailComponent },
+            { path: 'sendMessage/:id', component: SendMessageComponent }
         ]
     }
 ];

@@ -3,7 +3,7 @@ import { UserService } from '../services/user.service';
 
 @Component( {
     selector: 'app-change-password',
-    templateUrl: './change-password.component.html',
+    templateUrl: './html/change-password.component.html',
     styleUrls: ['./css/change-password.component.css']
 })
 export class ChangePasswordComponent implements OnInit {

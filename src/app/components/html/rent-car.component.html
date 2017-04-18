@@ -1,0 +1,89 @@
+<div *ngIf="car && images">
+	<div class="col-sm-offset-1 col-sm-8">
+		<div class="row">
+			<div class="col-sm-8 thumbnail">
+				<carousel> <slide *ngFor="let image of images"> <img [src]="image.urlLarge">
+				</slide> </carousel>
+				<div class="caption">
+					<img class="img-circle" [src]="car.userImageUrlSmall" alt="...">
+					{{car.userFirstName}} {{car.manufacturerName}} - {{car.year}}
+
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class=" col-sm-8">
+				<hr>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-8">
+				<h4>About this car</h4>
+				<p>{{car.description}}</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-8">
+				<hr>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-8">
+				<h4>Info</h4>
+				<ul>
+					<li>Transmission: {{car.transmissionTypeName}}</li>
+					<li>Fuel: {{car.fuelTypeName}}</li>
+					<li>Mileage: {{car.mileage}}</li>
+					<li>Seats: {{car.numberOfSeats}}</li>
+
+				</ul>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-8">
+				<hr>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-8">
+				<h4>Prices</h4>
+				<ul>
+					<li>Price: {{car.price}}</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-sm-3">
+		<div class="form-horizontal">
+			<h3>Rent this car</h3>
+			<div class="form-group">
+
+				<label class="control-label">Dates:</label>
+				<div class="col-sm-4">
+					<input class="form-control" type="text">
+				</div>
+				<div class="col-sm-4">
+					<input class="form-control" type="text">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-12">
+					<button class="btn btn-primary" [routerLink] = "['/manage/sendMessage', car.userId]" >send message</button>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-12">
+					<button class="btn btn-success">rent</button>
+				</div>
+			</div>
+		</div>
+
+	</div>

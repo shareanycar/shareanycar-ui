@@ -1,9 +1,9 @@
-export class Car{
+export class Car {
     id: number;
     licensePlateNumber: string;
-    description: string; 
+    description: string;
     mileage: number;
-    year: number;   
+    year: number;
     numberOfSeats: number;
     carTypeName: string;
     fuelTypeName: string;
@@ -17,6 +17,7 @@ export class Car{
     imageUrlSmall: string;
     imageUrlMedium: string;
     imageUrlLarge: string;
+    userId: number;
     userFirstName: string;
     userImageUrlSmall: string;
     userImageUrlMedium: string;

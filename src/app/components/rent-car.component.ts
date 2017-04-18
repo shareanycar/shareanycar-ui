@@ -7,7 +7,7 @@ import { Car } from '../dto/car';
 
 @Component( {
     selector: 'app-rent-car',
-    templateUrl: './rent-car.component.html',
+    templateUrl: './html/rent-car.component.html',
     styleUrls: ['./css/rent-car.component.css']
 })
 export class RentCarComponent implements OnInit {

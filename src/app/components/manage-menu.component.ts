@@ -4,7 +4,7 @@ import {Router} from '@angular/router';
 
 @Component( {
     selector: 'app-manage-menu',
-    templateUrl: './manage-menu.component.html',
+    templateUrl: './html/manage-menu.component.html',
     styleUrls: ['./css/manage-menu.component.css']
 })
 export class ManageMenuComponent implements OnInit {

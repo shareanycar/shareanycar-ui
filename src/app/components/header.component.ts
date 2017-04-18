@@ -4,7 +4,7 @@ import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  templateUrl: './header.component.html',
+  templateUrl: './html/header.component.html',
   styleUrls: ['./css/header.component.css']
 })
 export class HeaderComponent implements OnInit {

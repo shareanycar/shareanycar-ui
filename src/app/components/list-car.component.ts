@@ -14,7 +14,7 @@ import { FileUploader } from 'ng2-file-upload';
 
 @Component( {
     selector: 'app-list-car',
-    templateUrl: './list-car.component.html',
+    templateUrl: './html/list-car.component.html',
     styleUrls: ['./css/list-car.component.css']
 })
 export class ListCarComponent implements OnInit {
