@@ -26,6 +26,12 @@ import { DatepickerModule, CarouselModule } from 'ngx-bootstrap';
 import { FindCarsComponent } from './components/find-cars.component';
 import { RentCarComponent } from './components/rent-car.component';
 import { SendMessageComponent } from './components/send-message.component';
+import { FooterComponent } from './components/footer.component';
+import { IncomingMessagesComponent } from './components/incoming-messages.component';
+import { OutgoingMessagesComponent } from './components/outgoing-messages.component';
+import { ReadMessageComponent } from './components/read-message.component';
+import { MyMessagesComponent } from './components/my-messages.component';
+import { MyMessagesMenuComponent } from './components/my-messages-menu.component';
 
 
 @NgModule( {
@@ -46,6 +52,12 @@ import { SendMessageComponent } from './components/send-message.component';
         FindCarsComponent,
         RentCarComponent,
         SendMessageComponent,
+        FooterComponent,
+        IncomingMessagesComponent,
+        OutgoingMessagesComponent,
+        ReadMessageComponent,
+        MyMessagesComponent,
+        MyMessagesMenuComponent,
 
     ],
     imports: [

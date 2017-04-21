@@ -13,9 +13,7 @@ export class ManageComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit() {
-      if(!this.userService.isLoggedIn()){
-          this.router.navigate(['login']);
-      }
+      
   }
 
 }

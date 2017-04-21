@@ -16,13 +16,14 @@ export class MessageService {
 
     send( m: Message ): Promise<any> {
         return this.http
-            .post( AppSettings.API_ENDPOINT + "/message/send", m, { headers: this.headerService.headers() })
-            .toPromise();
+            .post( AppSettings.API_ENDPOINT + "message/send", JSON.stringify(m), { headers: this.headerService.headers() })
+            .toPromise()
+            ;
     }
 
     read( id: number ): Promise<Message> {
         return this.http
-            .get( AppSettings.API_ENDPOINT + "/message/read/" + id, { headers: this.headerService.headers() })
+            .get( AppSettings.API_ENDPOINT + "message/read/" + id, { headers: this.headerService.headers() })
             .toPromise()
             .then(( r ) => r.json() )
             .catch( this.handleError );
@@ -30,7 +31,7 @@ export class MessageService {
 
     incoming(): Promise<Message[]> {
         return this.http
-            .get( AppSettings.API_ENDPOINT + "/message/incoming", { headers: this.headerService.headers() })
+            .get( AppSettings.API_ENDPOINT + "message/incoming", { headers: this.headerService.headers() })
             .toPromise()
             .then(( r ) => r.json() )
             .catch( this.handleError );
@@ -38,7 +39,7 @@ export class MessageService {
 
     outgoing(): Promise<Message[]> {
         return this.http
-        .get(AppSettings.API_ENDPOINT + "/message/outgoing", {headers: this.headerService.headers()})
+        .get(AppSettings.API_ENDPOINT + "message/outgoing", {headers: this.headerService.headers()})
         .toPromise()
         .then((r) => r.json())
         .catch(this.handleError);

@@ -1,0 +1,27 @@
+<div class="col-sm-offset-2 col-sm-8">
+	<table class="table">
+		<thead>
+			<th>id</th>
+			<th>message date</th>
+			<th>from user</th>
+			<th>message title</th>
+		</thead>
+
+		<tbody>
+			<tr *ngFor="let m of messages">
+				<td>
+					<a [routerLink]="['/readMessage', m.id]">{{m.id}}</a>
+				</td>
+				<td>
+					<a [routerLink]="['/readMessage', m.id]"> {{m.messageDate}}</a>
+				</td>
+				<td>
+					<a [routerLink]="['/readMessage', m.id]"> {{m.fromUserName}} </a>
+				</td>
+				<td>
+					<a [routerLink]="['/readMessage', m.id]"> {{m.title}} </a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
