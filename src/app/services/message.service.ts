@@ -41,7 +41,7 @@ export class MessageService {
         return this.http
             .get( AppSettings.API_ENDPOINT + "message/outgoing", { headers: this.headerService.headers() })
             .toPromise()
-            .then(( r ) => r.json())
+            .then(( r ) => r.json() )
             .catch( this.handleError );
     }
 
@@ -55,7 +55,7 @@ export class MessageService {
     markedMessages( msgs: Message[], marked: boolean[] ): Message[] {
         let markedMsgs: Message[] = [];
         let i: number;
-        for ( i = 0; i < marked.length; i++ ) {
+        for ( i = 0; i < msgs.length; i++ ) {
             if ( marked[i] ) {
                 markedMsgs = markedMsgs.concat( [msgs[i]] );
             }
@@ -66,12 +66,12 @@ export class MessageService {
     remainingMessages( msgs: Message[], marked: boolean[] ): Message[] {
         let remainingMessages: Message[] = [];
         let i: number;
-        for ( i = 0; i < marked.length; i++ ) {
+        for ( i = 0; i < msgs.length; i++ ) {
             if ( !marked[i] ) {
                 remainingMessages = remainingMessages.concat( [msgs[i]] );
             }
-            return remainingMessages;
         }
+        return remainingMessages;
     }
 
     private handleError( error: any ): Promise<any> {
