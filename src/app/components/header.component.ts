@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        let timer = Observable.timer(0,10000);
+        let timer = Observable.timer(0,60000);
         timer.subscribe(t=> {
             this.checkMessages();
         });
