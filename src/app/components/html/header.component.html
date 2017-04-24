@@ -25,8 +25,14 @@
 			</li>
 			<li *ngIf="!userService.isLoggedIn()">
 				<a [routerLink]="['/login']">login</a>
+				<i class="icon-search"></i>
 			</li>
-
+			<li *ngIf="userService.isLoggedIn() && hasNewMessages">
+				<a [routerLink]="['/manage/messages/incoming']">
+					<span class="glyphicon glyphicon-envelope">new messages </span>
+				</a>
+			</li>
 		</ul>
+
 	</div>
 </nav>

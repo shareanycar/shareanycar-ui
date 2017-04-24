@@ -52,6 +52,14 @@ export class MessageService {
             .catch( this.handleError );
     }
 
+    newMessages(): Promise<any> {
+        return this.http
+            .get( AppSettings.API_ENDPOINT + "message/newmessages", { headers: this.headerService.headers() })
+            .toPromise()
+            .then( r => r.json() )
+            .catch( this.handleError );
+    }
+
     markedMessages( msgs: Message[], marked: boolean[] ): Message[] {
         let markedMsgs: Message[] = [];
         let i: number;
