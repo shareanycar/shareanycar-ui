@@ -10,7 +10,9 @@ import { Message } from '../dto/message';
 })
 export class IncomingMessagesComponent implements OnInit {
 
-    messages: Message[];
+    messages: Message[] = [] ;
+    marked: boolean[] = [];
+    
     constructor(
         private userService: UserService,
         private messageService: MessageService
@@ -18,7 +20,28 @@ export class IncomingMessagesComponent implements OnInit {
 
     ngOnInit() {
         this.messageService.incoming()
-            .then(( messages ) => this.messages = messages );
+            .then(( messages ) => {
+                this.messages = messages;
+                this.messages.forEach(() => this.marked = this.marked.concat( [false] ) );
+            });
+    }
+
+    getMessageStyle( status: string ): string {
+        if ( status == "NEW" ) {
+            return "bold";
+        } else {
+            return "normal";
+        }
+    }
+
+    remove(): any {
+        let markedMessages: Message[] = this.messageService.markedMessages(this.messages, this.marked);
+
+        this.messages = this.messageService.remainingMessages(this.messages, this.marked);
+        this.marked = [];
+        this.messages.forEach(() => this.marked = this.marked.concat( [false] ) );
+        
+        this.messageService.remove(markedMessages);
     }
 
 }

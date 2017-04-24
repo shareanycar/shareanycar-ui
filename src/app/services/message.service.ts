@@ -16,7 +16,7 @@ export class MessageService {
 
     send( m: Message ): Promise<any> {
         return this.http
-            .post( AppSettings.API_ENDPOINT + "message/send", JSON.stringify(m), { headers: this.headerService.headers() })
+            .post( AppSettings.API_ENDPOINT + "message/send", JSON.stringify( m ), { headers: this.headerService.headers() })
             .toPromise()
             ;
     }
@@ -39,10 +39,39 @@ export class MessageService {
 
     outgoing(): Promise<Message[]> {
         return this.http
-        .get(AppSettings.API_ENDPOINT + "message/outgoing", {headers: this.headerService.headers()})
-        .toPromise()
-        .then((r) => r.json())
-        .catch(this.handleError);
+            .get( AppSettings.API_ENDPOINT + "message/outgoing", { headers: this.headerService.headers() })
+            .toPromise()
+            .then(( r ) => r.json())
+            .catch( this.handleError );
+    }
+
+    remove( msgs: Message[] ): Promise<any> {
+        return this.http
+            .post( AppSettings.API_ENDPOINT + "message/delete", JSON.stringify( msgs ), { headers: this.headerService.headers() })
+            .toPromise()
+            .catch( this.handleError );
+    }
+
+    markedMessages( msgs: Message[], marked: boolean[] ): Message[] {
+        let markedMsgs: Message[] = [];
+        let i: number;
+        for ( i = 0; i < marked.length; i++ ) {
+            if ( marked[i] ) {
+                markedMsgs = markedMsgs.concat( [msgs[i]] );
+            }
+        }
+        return markedMsgs;
+    }
+
+    remainingMessages( msgs: Message[], marked: boolean[] ): Message[] {
+        let remainingMessages: Message[] = [];
+        let i: number;
+        for ( i = 0; i < marked.length; i++ ) {
+            if ( !marked[i] ) {
+                remainingMessages = remainingMessages.concat( [msgs[i]] );
+            }
+            return remainingMessages;
+        }
     }
 
     private handleError( error: any ): Promise<any> {

@@ -32,8 +32,6 @@ const routes: Routes = [
     { path: 'listCar', component: ListCarComponent },
     { path: 'findCars', component: FindCarsComponent },
     { path: 'rentCar/:id', component: RentCarComponent },
-    { path: 'sendMessage/:id', component: SendMessageComponent },
-    { path: 'readMessage/:id', component: ReadMessageComponent },
     {
         path: 'manage', component: ManageComponent, children: [
             { path: '', component: ManageMenuComponent, outlet: 'manage-menu' },
@@ -41,6 +39,8 @@ const routes: Routes = [
             { path: 'changePassword', component: ChangePasswordComponent },
             { path: 'profile', component: ProfileComponent },
             { path: 'carDetail/:id', component: CarDetailComponent },
+            { path: 'sendMessage/:id', component: SendMessageComponent },
+            { path: 'readMessage/:id', component: ReadMessageComponent },
             {
                 path: 'messages', component: MyMessagesComponent, children: [
                     { path: '', component: MyMessagesMenuComponent, outlet: 'my-messages-menu' },

@@ -17,8 +17,6 @@ export class ManageMenuComponent implements OnInit {
     ngOnInit() {
         if ( !this.userService.isLoggedIn() ) {
             this.router.navigate(['login']);
-        }else{
-            this.router.navigate(['manage','myCars'])
         }
     }
 
