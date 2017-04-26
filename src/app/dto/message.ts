@@ -7,5 +7,5 @@ export class Message {
     fromUserName: string;
     toUserName: string;
     messageStatus: string;
-    messageDate: Date;
+    messageDate: string;
 }

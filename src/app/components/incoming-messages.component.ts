@@ -38,6 +38,7 @@ export class IncomingMessagesComponent implements OnInit {
         let markedMessages: Message[] = this.messageService.markedMessages(this.messages, this.marked);
 
         this.messages = this.messageService.remainingMessages(this.messages, this.marked);
+        
         this.marked = [];
         this.messages.forEach(() => this.marked = this.marked.concat( [false] ) );
         

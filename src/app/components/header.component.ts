@@ -14,8 +14,7 @@ export class HeaderComponent implements OnInit {
 
     newMessages: Message[];
     hasNewMessages: boolean = false;
-    changeDetection: boolean = false;
-    currentNewMessages: number = 0;
+
     constructor(
         private userService: UserService,
         private messageService: MessageService,
@@ -25,12 +24,11 @@ export class HeaderComponent implements OnInit {
     ngOnInit() {
         let timer = Observable.timer(0,60000);
         timer.subscribe(t=> {
-            this.checkMessages();
+            this.checkNewMessages();
         });
     }
 
-    checkMessages() {
-        console.log("funcing checking");
+    checkNewMessages() {
         if ( this.userService.isLoggedIn() ) {
             this.messageService.newMessages()
                 .then(( messages ) => {
@@ -42,8 +40,6 @@ export class HeaderComponent implements OnInit {
                     }
                 });
         }
-
-        this.changeDetection = false;
     }
 
     
