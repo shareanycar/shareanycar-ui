@@ -29,18 +29,19 @@ const routes: Routes = [
     { path: '', outlet: 'footer', component: FooterComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'login', component: LoginComponent },
-    { path: 'listCar', component: ListCarComponent },
     { path: 'findCars', component: FindCarsComponent },
     { path: 'rentCar/:id', component: RentCarComponent },
     {
         path: 'manage', component: ManageComponent, children: [
             { path: '', component: ManageMenuComponent, outlet: 'manage-menu' },
             { path: 'myCars', component: MyCarsComponent },
+            { path: 'listCar', component: ListCarComponent },
             { path: 'changePassword', component: ChangePasswordComponent },
             { path: 'profile', component: ProfileComponent },
             { path: 'carDetail/:id', component: CarDetailComponent },
             { path: 'sendMessage/:id', component: SendMessageComponent },
             { path: 'readMessage/:id', component: ReadMessageComponent },
+
             {
                 path: 'messages', component: MyMessagesComponent, children: [
                     { path: '', component: MyMessagesMenuComponent, outlet: 'my-messages-menu' },

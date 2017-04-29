@@ -58,7 +58,9 @@ export class ListCarComponent implements OnInit {
             this.carService.manufacturers(),
             this.carService.insurers()
         ] ).then(( results: any[] ) => {
+            
             this.locations = results[0];
+
             results[1].forEach(( elem ) => this.transmissionTypes.push( elem.name ) );
             results[2].forEach(( elem ) => this.fuelTypes.push( elem.name ) );
             results[3].forEach(( elem ) => this.carTypes.push( elem.name ) );

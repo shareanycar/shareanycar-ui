@@ -3,11 +3,12 @@
 		<div class="row">
 
 			<div *ngFor="let car of cars" class="col-sm-4">
-				<a [routerLink]="['/rentCar', car.id]" class="thumbnail">
-					
-						<img class="grow" [src]="car.imageUrlMedium" alt="...">
-						<h3>{{car.price}} &#x20bd;</h3>
-					
+				<a *ngIf="(car.locationCountry == country && car.locationCity == city) || (!country  && !city)"
+					[routerLink]="['/rentCar', car.id]" class="thumbnail">
+
+					<img class="grow" [src]="car.imageUrlMedium" alt="...">
+					<h3>{{car.price}} &#x20bd;</h3>
+
 
 					<div class="caption">
 						<img class="img-circle" [src]="car.userImageUrlSmall" alt="...">
@@ -52,7 +53,7 @@
 				<div class="col-sm-8">
 					<label class="control-label">Number of seats:</label>
 					<select class="form-control" [(ngModel)]="seat">
-						<option *ngFor="let seat of numberOfSeats" [ngValue]="carType">{{seat}}</option>
+						<option *ngFor="let seat of numberOfSeats" [ngValue]="seat">{{seat}}</option>
 					</select>
 				</div>
 			</div>
