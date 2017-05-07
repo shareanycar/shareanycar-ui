@@ -21,4 +21,6 @@ export class Car {
     userFirstName: string;
     userImageUrlSmall: string;
     userImageUrlMedium: string;
+    numberOfImages: number;
+    status: string;
 }

@@ -7,6 +7,7 @@
 			<th></th>
 			<th>type</th>
 			<th>price</th>
+			<th>number of pictures</th>
 			<th>status</th>
 		</thead>
 		<tbody>
@@ -26,7 +27,10 @@
 					<a [routerLink]="['../carDetail', car.id]"> {{car.price}} </a>
 				</td>
 				<td>
-					<a [routerLink]="['../carDetail', car.id]">123 </a>
+					<a [routerLink]="['../carDetail', car.id]"> {{car.numberOfImages}} </a>
+				</td>
+				<td>
+					<a [routerLink]="['../carDetail', car.id]">{{car.status}} </a>
 				</td>
 
 			</tr>

@@ -74,7 +74,9 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Number of Seats: </label>
 				<div class="col-sm-4">
-					<input class="form-control" [(ngModel)]="car.numberOfSeats" placeholder="number of seats">
+					<select class="form-control" [(ngModel)]="car.numberOfSeats">
+						<option *ngFor="let seat of numberOfSeats" [ngValue]="seat">{{seat}}</option>
+					</select>
 				</div>
 			</div>
 

@@ -23,6 +23,14 @@
 				<button class="btn btn-primary" (click)="saveImage()">save</button>
 			</div>
 
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Car status:</label>
+				<div class="col-sm-4">
+					<select class="form-control" [(ngModel)]="car.status" >
+						<option *ngFor="let status of statuses" [ngValue]="status">{{status}}</option>
+					</select>
+				</div>
+			</div>
 
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Country:</label>
@@ -95,7 +103,9 @@
 			<div class="form-group">
 				<label class="col-sm-2 control-label">Number of Seats: </label>
 				<div class="col-sm-4">
-					<input class="form-control" [(ngModel)]="car.numberOfSeats" placeholder="number of seats">
+					<select class="form-control" [(ngModel)]="car.numberOfSeats">
+						<option *ngFor="let seat of numberOfSeats" [ngValue]="seat">{{seat}}</option>
+					</select>
 				</div>
 			</div>
 

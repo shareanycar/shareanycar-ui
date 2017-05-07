@@ -31,6 +31,9 @@ export class CarDetailComponent implements OnInit {
     transmissionTypes: string[] = [];
     fuelTypes: string[] = [];
     carTypes: string[] = [];
+    statuses: string[] = [];
+    numberOfSeats: number[] = [];
+
     uploaderMain: FileUploader;
     uploaderAdditional: FileUploader;
     errorMsg: string;
@@ -69,8 +72,8 @@ export class CarDetailComponent implements OnInit {
             this.carService.carTypes(),
             this.carService.manufacturers(),
             this.carService.insurers(),
-            this.imageService.carImages(this.carId)
-
+            this.imageService.carImages(this.carId),
+            this.carService.statuses()
         ] )
             .then(( results: any[] ) => {
                 this.locations = results[0];
@@ -81,9 +84,11 @@ export class CarDetailComponent implements OnInit {
                 results[5].forEach(( elem ) => this.manufacturers.push( elem.name ) );
                 results[6].forEach(( elem ) => this.insurers.push( elem.name ) );
                 this.images = results[7];
+                results[8].forEach(( elem ) => this.statuses.push( elem.name ) );
 
                 this.countries = this.locationService.countries( this.locations );
                 this.cities = this.locationService.cities( this.car.locationCountry, this.locations );
+                this.numberOfSeats = this.numberOfSeats.concat([2,3,4,5,6,7,8]);
 
             });
 

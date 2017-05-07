@@ -34,6 +34,7 @@ export class ListCarComponent implements OnInit {
     countries: string[] = [];
     cities: string[] = [];
     transmissionTypes: string[] = [];
+    numberOfSeats: number[] = [];
     fuelTypes: string[] = [];
     carTypes: string[] = [];
     errorMsg: string;
@@ -77,6 +78,7 @@ export class ListCarComponent implements OnInit {
             this.car.carTypeName = this.carTypes[0];
             this.car.manufacturerName = this.manufacturers[0];
             this.car.insurerName = this.insurers[0];
+            this.numberOfSeats = this.numberOfSeats.concat([2,3,4,5,6,7,8]);
 
         });
     }

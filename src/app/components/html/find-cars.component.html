@@ -3,7 +3,11 @@
 		<div class="row">
 
 			<div *ngFor="let car of cars" class="col-sm-4">
-				<a *ngIf="(car.locationCountry == country && car.locationCity == city) || (!country  && !city)"
+				<a *ngIf="((car.locationCountry == country && 
+							car.locationCity == city) || (!country  && !city)) &&
+							(car.carTypeName == carType || !carType) && 
+							(car.transmissionTypeName == transmissionType || !transmissionType) &&
+							(car.numberOfSeats >= seat || !seat)"
 					[routerLink]="['/rentCar', car.id]" class="thumbnail">
 
 					<img class="grow" [src]="car.imageUrlMedium" alt="...">
@@ -61,7 +65,7 @@
 			<div class="form-group">
 				<div class="col-sm-8">
 					<label class="control-label">Transmission:</label>
-					<select class="form-control" [(ngModel)]="transmission">
+					<select class="form-control" [(ngModel)]="transmissionType">
 						<option *ngFor="let transmission of transmissionTypes" [ngValue]="transmission">{{transmission}}</option>
 					</select>
 				</div>

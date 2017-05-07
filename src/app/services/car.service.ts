@@ -97,6 +97,14 @@ export class CarService {
             .then( res => res.json() )
             .catch( this.handleError );
     }
+    
+    statuses(): Promise<Property>{
+        return this.http
+        .get( AppSettings.API_ENDPOINT + "property/status", { headers: this.headerService.headers() })
+        .toPromise()
+        .then( res => res.json() )
+        .catch( this.handleError );
+    }
 
     private handleError( error: any ): Promise<any> {
         console.error( 'An error occurred', error ); // for demo purposes only

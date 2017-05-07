@@ -22,14 +22,14 @@ export class FindCarsComponent implements OnInit {
     cities: string[] = [];
     city: string;
 
-    carTypes: string[] = [];
+    carTypes: string[] = [""];
     carType: string;
 
-    transmissionTypes: string[] = [];
+    transmissionTypes: string[] = [""];
     transmissionType: string;
 
-    numberOfSeats: string[] = [];
-    seat: string;
+    numberOfSeats: number[] = [];
+    seat: number ;
 
     constructor(
         private carService: CarService,
@@ -53,7 +53,7 @@ export class FindCarsComponent implements OnInit {
             this.countries = this.locationService.countries( this.locations );
             this.country = this.countries[0];
             this.cities = this.locationService.cities( this.country, this.locations );
-            this.numberOfSeats = this.numberOfSeats.concat( ['2', '3', '4', '5', '6', '7', '8+'] );
+            this.numberOfSeats = this.numberOfSeats.concat( [ , 2, 3, 4, 5, 6, 7, 8] );
 
         });
     }
