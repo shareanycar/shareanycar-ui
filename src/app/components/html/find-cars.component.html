@@ -2,13 +2,8 @@
 	<div class="col-sm-offset-1 col-sm-8">
 		<div class="row">
 
-			<div *ngFor="let car of cars" class="col-sm-4">
-				<a *ngIf="((car.locationCountry == country && 
-							car.locationCity == city) || (!country  && !city)) &&
-							(car.carTypeName == carType || !carType) && 
-							(car.transmissionTypeName == transmissionType || !transmissionType) &&
-							(car.numberOfSeats >= seat || !seat)"
-					[routerLink]="['/rentCar', car.id]" class="thumbnail">
+			<div *ngFor="let car of filteredCars" class="col-sm-4">
+				<a [routerLink]="['/rentCar', car.id]" class="thumbnail">
 
 					<img class="grow" [src]="car.imageUrlMedium" alt="...">
 					<h3>{{car.price}} &#x20bd;</h3>
@@ -29,7 +24,7 @@
 			<div class="form-group">
 				<div class="col-sm-8">
 					<label class="control-label">Country:</label>
-					<select class="form-control" [(ngModel)]="country" (change)="changeCountry()">
+					<select class="form-control" [(ngModel)]="country" (change)="changeCountry();filterCars()">
 						<option *ngFor="let country of countries" [ngValue]="country">{{country}}</option>
 					</select>
 				</div>
@@ -38,7 +33,7 @@
 			<div class="form-group">
 				<div class="col-sm-8">
 					<label class="control-label">City:</label>
-					<select class="form-control" [(ngModel)]="city">
+					<select class="form-control" [(ngModel)]="city" (change)="filterCars()">
 						<option *ngFor="let city of cities" [ngValue]="city">{{city}}</option>
 					</select>
 				</div>
@@ -47,7 +42,7 @@
 			<div class="form-group">
 				<div class="col-sm-8">
 					<label class="control-label">Car Type:</label>
-					<select class="form-control" [(ngModel)]="carType">
+					<select class="form-control" [(ngModel)]="carType" (change)="filterCars()">
 						<option *ngFor="let carType of carTypes" [ngValue]="carType">{{carType}}</option>
 					</select>
 				</div>
@@ -56,7 +51,7 @@
 			<div class="form-group">
 				<div class="col-sm-8">
 					<label class="control-label">Number of seats:</label>
-					<select class="form-control" [(ngModel)]="seat">
+					<select class="form-control" [(ngModel)]="seat" (change)="filterCars()">
 						<option *ngFor="let seat of numberOfSeats" [ngValue]="seat">{{seat}}</option>
 					</select>
 				</div>
@@ -65,7 +60,7 @@
 			<div class="form-group">
 				<div class="col-sm-8">
 					<label class="control-label">Transmission:</label>
-					<select class="form-control" [(ngModel)]="transmissionType">
+					<select class="form-control" [(ngModel)]="transmissionType" (change)="filterCars()">
 						<option *ngFor="let transmission of transmissionTypes" [ngValue]="transmission">{{transmission}}</option>
 					</select>
 				</div>

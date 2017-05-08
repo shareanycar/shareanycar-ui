@@ -13,6 +13,7 @@ import { Location } from '../dto/location';
 export class FindCarsComponent implements OnInit {
 
     cars: Car[];
+    filteredCars: Car[];
 
     locations: Location[] = [];
 
@@ -29,7 +30,7 @@ export class FindCarsComponent implements OnInit {
     transmissionType: string;
 
     numberOfSeats: number[] = [];
-    seat: number ;
+    seat: number;
 
     constructor(
         private carService: CarService,
@@ -43,7 +44,6 @@ export class FindCarsComponent implements OnInit {
             this.carService.transmissionTypes(),
             this.locationService.all()
         ] ).then(( results: any[] ) => {
-            this.cars = results[0];
             results[1].forEach(( elem: Property ) => this.carTypes.push( elem.name ) );
             results[2].forEach(( elem: Property ) => this.transmissionTypes.push( elem.name ) );
 
@@ -53,14 +53,27 @@ export class FindCarsComponent implements OnInit {
             this.countries = this.locationService.countries( this.locations );
             this.country = this.countries[0];
             this.cities = this.locationService.cities( this.country, this.locations );
-            this.numberOfSeats = this.numberOfSeats.concat( [ , 2, 3, 4, 5, 6, 7, 8] );
-
+            this.numberOfSeats = this.numberOfSeats.concat( [, 2, 3, 4, 5, 6, 7, 8] );
+            this.cars = results[0];
+            this.filterCars();
+            
         });
     }
 
     changeCountry() {
         this.cities = this.locationService.cities( this.country, this.locations );
         this.city = this.cities[0];
+    }
+
+    filterCars() {
+        this.filteredCars = this.cars.filter((car) => 
+            ((car.locationCountry == this.country && 
+                    car.locationCity == this.city) || (!this.country  && !this.city)) &&
+                    (car.carTypeName == this.carType || !this.carType) && 
+                    (car.transmissionTypeName == this.transmissionType || !this.transmissionType) &&
+                    (car.numberOfSeats >= this.seat || !this.seat)
+        );
+        
     }
 
 }
