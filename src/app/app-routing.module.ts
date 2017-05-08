@@ -20,6 +20,10 @@ import { MyMessagesComponent } from './components/my-messages.component';
 import { MyMessagesMenuComponent } from './components/my-messages-menu.component';
 import { IncomingMessagesComponent } from './components/incoming-messages.component';
 import { OutgoingMessagesComponent } from './components/outgoing-messages.component';
+import { MyBookingsComponent } from './components/my-bookings.component';
+import { MyBookingsMenuComponent } from './components/my-bookings-menu.component';
+import { OwnerBookingsComponent } from './components/owner-bookings.component';
+import { ClientBookingsComponent } from './components/client-bookings.component';
 
 
 const routes: Routes = [
@@ -41,12 +45,18 @@ const routes: Routes = [
             { path: 'carDetail/:id', component: CarDetailComponent },
             { path: 'sendMessage/:id', component: SendMessageComponent },
             { path: 'readMessage/:id', component: ReadMessageComponent },
-
             {
                 path: 'messages', component: MyMessagesComponent, children: [
                     { path: '', component: MyMessagesMenuComponent, outlet: 'my-messages-menu' },
                     { path: 'incoming', component: IncomingMessagesComponent },
                     { path: 'outgoing', component: OutgoingMessagesComponent }
+                ]
+            },
+            {
+                path: 'bookings', component: MyBookingsComponent, children: [
+                    {path: '', component: MyBookingsMenuComponent, outlet: 'my-bookings-menu'},
+                    {path: 'owner', component: OwnerBookingsComponent},
+                    {path: 'client', component: ClientBookingsComponent}
                 ]
             }
 

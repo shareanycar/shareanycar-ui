@@ -32,6 +32,10 @@ import { OutgoingMessagesComponent } from './components/outgoing-messages.compon
 import { ReadMessageComponent } from './components/read-message.component';
 import { MyMessagesComponent } from './components/my-messages.component';
 import { MyMessagesMenuComponent } from './components/my-messages-menu.component';
+import { OwnerBookingsComponent } from './components/owner-bookings.component';
+import { MyBookingsComponent } from './components/my-bookings.component';
+import { ClientBookingsComponent } from './components/client-bookings.component';
+import { MyBookingsMenuComponent } from './components/my-bookings-menu.component';
 
 
 @NgModule( {
@@ -58,6 +62,10 @@ import { MyMessagesMenuComponent } from './components/my-messages-menu.component
         ReadMessageComponent,
         MyMessagesComponent,
         MyMessagesMenuComponent,
+        OwnerBookingsComponent,
+        MyBookingsComponent,
+        ClientBookingsComponent,
+        MyBookingsMenuComponent,
 
     ],
     imports: [
