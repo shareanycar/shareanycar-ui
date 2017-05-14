@@ -11,6 +11,7 @@ import { ImageService } from './services/image.service';
 import { HeaderService } from './services/header.service';
 import { LocationService } from './services/location.service';
 import { MessageService } from './services/message.service';
+import { BookingService } from './services/booking.service';
 import { HeaderComponent } from './components/header.component';
 import { HomeComponent } from './components/home.component';
 import { RegisterComponent } from './components/register.component';
@@ -82,7 +83,8 @@ import { MyBookingsMenuComponent } from './components/my-bookings-menu.component
         ImageService,
         HeaderService,
         LocationService,
-        MessageService
+        MessageService,
+        BookingService
     ],
     bootstrap: [
         AppComponent

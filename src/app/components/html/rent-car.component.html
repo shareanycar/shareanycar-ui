@@ -61,29 +61,43 @@
 	</div>
 
 	<div class="col-sm-3">
-		<div class="form-horizontal">
+		<div class="form-vertical">
 			<h3>Rent this car</h3>
 			<div class="form-group">
 
 				<label class="control-label">Dates:</label>
-				<div class="col-sm-4">
-					<input class="form-control" type="text">
+				<div class="col-sm-6">
+					<div class="input-group input-daterange">
+						<input class="form-control" type="text" [ngModel]="booking.dateFrom"
+							(focus)="showDatePickerStart = true">
+						<div *ngIf="showDatePickerStart" style="position: absolute; z-index: 10; min-height: 290px;">
+							<datepicker [(ngModel)]="booking.dateFrom" [showWeeks]="false" [minDate]="minDate"
+								(selectionDone)="showDatePickerStart = false"></datepicker>
+						</div>
+					</div>
 				</div>
-				<div class="col-sm-4">
-					<input class="form-control" type="text">
+				<div class="col-sm-6">
+					<div class="input-group input-daterange">
+						<input class="form-control" type="text" [ngModel]="booking.dateTo" (focus)="showDatePickerEnd = true">
+						<div *ngIf="showDatePickerEnd" style="position: absolute; z-index: 10; min-height: 290px;">
+							<datepicker [(ngModel)]="booking.dateTo" [showWeeks]="false" [minDate]="booking.dateFrom"
+								(selectionDone)="showDatePickerEnd = false"></datepicker>
+						</div>
+					</div>
 				</div>
 			</div>
 
 			<div class="form-group">
 				<div class="col-sm-12">
-					<button class="btn btn-primary" [routerLink] = "['/manage/sendMessage',  car.userId]" >send message</button>
+					<button class="btn btn-primary" [routerLink]="['/manage/sendMessage',  car.userId]">send
+						message</button>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-12">
-					<button class="btn btn-success">rent</button>
+					<button class="btn btn-success" (click)="book()">book</button>
 				</div>
 			</div>
+			<div class="col-sm-12">{{errMsg}}</div>
 		</div>
-
 	</div>
