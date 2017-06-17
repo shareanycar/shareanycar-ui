@@ -1,0 +1,59 @@
+<div *ngIf="booking && car">
+	<div class="form-horizontal">
+		<div class="col-sm-offset-2 ">
+			<h5 class="col-sm-offset-2 col-sm-10">Booking for {{car.manufacturerName}}
+				{{car.modelName}}: from {{booking.dateFrom}} to {{booking.dateTo}}</h5>
+
+			<div class="form-group">
+				<div class="col-sm-4">
+					<div class="thumbnail">
+						<img src="{{car.imageUrlMedium}}" alt="image not found" />
+					</div>
+				</div>
+
+				<div class="col-sm-4">
+					<h4>Info</h4>
+					<ul>
+						<li>Country: {{car.locationCountry}}</li>
+						<li>City: {{car.locationCity}}</li>
+						<li>Transmission: {{car.transmissionTypeName}}</li>
+						<li>Fuel: {{car.fuelTypeName}}</li>
+						<li>Mileage: {{car.mileage}}</li>
+						<li>Seats: {{car.numberOfSeats}}</li>
+						<li>Booking status: {{booking.status}}</li>
+						<li>Owner name: {{booking.ownerName}}</li>
+						<li>Number of days: {{booking.numberOfDays}}</li>
+						<li>Total price: {{booking.totalPrice}}</li>
+					</ul>
+				</div>
+
+			</div>
+			<div class="form-group">
+				<div class="col-sm-12">
+					<button class="btn btn-primary" (click)="cancel()">cancel</button>
+					<button class="btn btn-default" (click)="location.back()">back</button>
+				</div>
+			</div>
+			<div class="form-group">
+				<p>{{errMsgConfirm}}</p>
+			</div>
+
+			<h4>Quick message</h4>
+			<div class="form-group">
+				<div class="col-sm-8">
+					<textarea class="form-control" [(ngModel)]="text"></textarea>
+
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-12">
+					<button class="btn btn-primary" (click)="send()">send message</button>
+				</div>
+			</div>
+			<div class="form-group">
+				<p>{{errMsgSendMsg}}</p>
+			</div>
+		</div>
+	</div>
+</div>

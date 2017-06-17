@@ -50,9 +50,8 @@ export class BookingService {
 
     confirmBooking( id: number ): Promise<any> {
         return this.http
-            .put( AppSettings.API_ENDPOINT + "book/" + id, { headers: this.headerService.headers() })
+            .put( AppSettings.API_ENDPOINT + "book/" + id,{}, { headers: this.headerService.headers() })
             .toPromise()
-            .then( res => res.json() )
             .catch( this.handleError );
     }
 
@@ -60,7 +59,6 @@ export class BookingService {
         return this.http
             .delete( AppSettings.API_ENDPOINT + "book/" + id, { headers: this.headerService.headers() })
             .toPromise()
-            .then( res => res.json() )
             .catch( this.handleError );
     }
 

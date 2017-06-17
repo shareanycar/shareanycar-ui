@@ -23,4 +23,5 @@ export class Car {
     userImageUrlMedium: string;
     numberOfImages: number;
     status: string;
+    defaultAvailability: string;
 }

@@ -24,6 +24,8 @@ import { MyBookingsComponent } from './components/my-bookings.component';
 import { MyBookingsMenuComponent } from './components/my-bookings-menu.component';
 import { OwnerBookingsComponent } from './components/owner-bookings.component';
 import { ClientBookingsComponent } from './components/client-bookings.component';
+import {ViewOwnerBookingComponent} from './components/view-owner-booking.component';
+import {ViewClientBookingComponent} from './components/view-client-booking.component';
 
 
 const routes: Routes = [
@@ -56,7 +58,9 @@ const routes: Routes = [
                 path: 'bookings', component: MyBookingsComponent, children: [
                     {path: '', component: MyBookingsMenuComponent, outlet: 'my-bookings-menu'},
                     {path: 'owner', component: OwnerBookingsComponent},
-                    {path: 'client', component: ClientBookingsComponent}
+                    {path: 'client', component: ClientBookingsComponent},
+                    {path: 'owner/:id', component: ViewOwnerBookingComponent},
+                    {path: 'client/:id', component: ViewClientBookingComponent}
                 ]
             }
 

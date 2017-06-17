@@ -20,5 +20,5 @@ export class ClientBookingsComponent implements OnInit {
             this.bookings = results[0];
         });
     }
-
+   
 }

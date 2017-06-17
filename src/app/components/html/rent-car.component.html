@@ -63,9 +63,9 @@
 	<div class="col-sm-3">
 		<div class="form-vertical">
 			<h3>Rent this car</h3>
-			<div class="form-group">
 
-				<label class="control-label">Dates:</label>
+			<div class="form-group">
+				<label class="control-label">Start date:</label>
 				<div class="col-sm-6">
 					<div class="input-group input-daterange">
 						<input class="form-control" type="text" [ngModel]="booking.dateFrom"
@@ -76,9 +76,15 @@
 						</div>
 					</div>
 				</div>
+			</div>
+
+			<div class="form-group">
+				<label class="control-label">End date:</label>
+
 				<div class="col-sm-6">
 					<div class="input-group input-daterange">
-						<input class="form-control" type="text" [ngModel]="booking.dateTo" (focus)="showDatePickerEnd = true">
+						<input class="form-control" type="text" [ngModel]="booking.dateTo"
+							(focus)="showDatePickerEnd = true">
 						<div *ngIf="showDatePickerEnd" style="position: absolute; z-index: 10; min-height: 290px;">
 							<datepicker [(ngModel)]="booking.dateTo" [showWeeks]="false" [minDate]="booking.dateFrom"
 								(selectionDone)="showDatePickerEnd = false"></datepicker>
@@ -88,16 +94,21 @@
 			</div>
 
 			<div class="form-group">
-				<div class="col-sm-12">
+				<div class="col-sm-6">
+					<textarea class="form-control"  rows="4" cols="12" placeholder="request booking" [(ngModel)]="booking.note"></textarea>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-sm-4">
 					<button class="btn btn-primary" [routerLink]="['/manage/sendMessage',  car.userId]">send
 						message</button>
 				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-sm-12">
+				<div class="col-sm-offset-1 col-sm-4">
 					<button class="btn btn-success" (click)="book()">book</button>
 				</div>
 			</div>
+
 			<div class="col-sm-12">{{errMsg}}</div>
 		</div>
 	</div>

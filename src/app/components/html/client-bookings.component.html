@@ -1,3 +1,31 @@
-<p>
-  client-bookings works!
-</p>
+<div class="col-sm-offset-2 col-sm-8">
+	<table class="table">
+		<thead>
+			<th>from date</th>
+			<th>to date</th>
+			<th>Manufacturer</th>
+			<th>Model</th>
+			<th>status</th>
+		</thead>
+		<tbody>
+			<tr *ngFor="let booking of bookings">
+				<td>
+					<a [routerLink]="[ booking.id]">{{booking.dateFrom}}</a>
+				</td>
+				<td>
+					<a [routerLink]="[ booking.id]">{{booking.dateTo}}</a>
+				</td>
+				<td>
+					<a [routerLink]="[ booking.id]">{{booking.manufacturer}}</a>
+				</td>
+				<td>
+					<a [routerLink]="[ booking.id]">{{booking.model}}</a>
+				</td>
+				<td>
+					<a [routerLink]="[ booking.id]">{{booking.status}}</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+

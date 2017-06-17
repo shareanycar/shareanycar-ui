@@ -37,6 +37,8 @@ import { OwnerBookingsComponent } from './components/owner-bookings.component';
 import { MyBookingsComponent } from './components/my-bookings.component';
 import { ClientBookingsComponent } from './components/client-bookings.component';
 import { MyBookingsMenuComponent } from './components/my-bookings-menu.component';
+import { ViewClientBookingComponent } from './components/view-client-booking.component';
+import { ViewOwnerBookingComponent } from './components/view-owner-booking.component';
 
 
 @NgModule( {
@@ -67,6 +69,8 @@ import { MyBookingsMenuComponent } from './components/my-bookings-menu.component
         MyBookingsComponent,
         ClientBookingsComponent,
         MyBookingsMenuComponent,
+        ViewClientBookingComponent,
+        ViewOwnerBookingComponent,
 
     ],
     imports: [
