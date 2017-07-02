@@ -59,7 +59,7 @@ export class ListCarComponent implements OnInit {
             this.carService.manufacturers(),
             this.carService.insurers()
         ] ).then(( results: any[] ) => {
-            
+
             this.locations = results[0];
 
             results[1].forEach(( elem ) => this.transmissionTypes.push( elem.name ) );
@@ -78,7 +78,7 @@ export class ListCarComponent implements OnInit {
             this.car.carTypeName = this.carTypes[0];
             this.car.manufacturerName = this.manufacturers[0];
             this.car.insurerName = this.insurers[0];
-            this.numberOfSeats = this.numberOfSeats.concat([2,3,4,5,6,7,8]);
+            this.numberOfSeats = this.numberOfSeats.concat( [2, 3, 4, 5, 6, 7, 8] );
 
         });
     }
@@ -89,6 +89,7 @@ export class ListCarComponent implements OnInit {
     }
 
     create() {
+        console.log(this.car.defaultAvailability);
         this.carService
             .create( this.car )
             .then(( id ) => {

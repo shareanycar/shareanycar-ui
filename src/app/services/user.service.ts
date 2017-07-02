@@ -22,6 +22,13 @@ export class UserService {
       .catch(this.handleError);
   }
   
+  delete(): Promise<any>{
+      return this.http
+      .delete(AppSettings.API_ENDPOINT + "user", {headers: this.headerService.headers()})
+      .toPromise()
+      .catch(this.handleError);
+  }
+  
   update(user: User): Promise<any>{
       return this.http
       .put(AppSettings.API_ENDPOINT + "user", JSON.stringify(user), {headers: this.headerService.headers()})     
