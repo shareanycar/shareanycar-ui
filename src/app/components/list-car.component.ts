@@ -48,6 +48,7 @@ export class ListCarComponent implements OnInit {
             this.router.navigate( ['login'] );
         }
         this.car = new Car;
+        this.car.defaultAvailability = 'AVAILABLE'; 
 
         this.uploader = new FileUploader( {});
 

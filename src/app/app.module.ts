@@ -39,7 +39,11 @@ import { ClientBookingsComponent } from './components/client-bookings.component'
 import { MyBookingsMenuComponent } from './components/my-bookings-menu.component';
 import { ViewClientBookingComponent } from './components/view-client-booking.component';
 import { ViewOwnerBookingComponent } from './components/view-owner-booking.component';
+import {CarAvailabilityService} from './services/car-availability.service';
+import {NKDatetimeModule} from 'ng2-datetime/ng2-datetime';
+import { CookieService } from 'ng2-cookies';
 
+import * as $ from 'jquery';
 
 @NgModule( {
     declarations: [
@@ -80,6 +84,7 @@ import { ViewOwnerBookingComponent } from './components/view-owner-booking.compo
         AppRoutingModule,
         CarouselModule.forRoot(),
         DatepickerModule.forRoot(),
+        NKDatetimeModule
     ],
     providers: [
         UserService,
@@ -88,7 +93,9 @@ import { ViewOwnerBookingComponent } from './components/view-owner-booking.compo
         HeaderService,
         LocationService,
         MessageService,
-        BookingService
+        BookingService,
+        CookieService,
+        CarAvailabilityService
     ],
     bootstrap: [
         AppComponent

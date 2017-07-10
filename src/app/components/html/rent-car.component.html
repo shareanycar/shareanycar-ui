@@ -68,8 +68,10 @@
 				<label class="control-label">Start date:</label>
 				<div class="col-sm-6">
 					<div class="input-group input-daterange">
+						
 						<input class="form-control" type="text" [ngModel]="booking.dateFrom"
 							(focus)="showDatePickerStart = true">
+							
 						<div *ngIf="showDatePickerStart" style="position: absolute; z-index: 10; min-height: 290px;">
 							<datepicker [(ngModel)]="booking.dateFrom" [showWeeks]="false" [minDate]="minDate"
 								(selectionDone)="showDatePickerStart = false"></datepicker>
@@ -83,8 +85,10 @@
 
 				<div class="col-sm-6">
 					<div class="input-group input-daterange">
+					
 						<input class="form-control" type="text" [ngModel]="booking.dateTo"
 							(focus)="showDatePickerEnd = true">
+							
 						<div *ngIf="showDatePickerEnd" style="position: absolute; z-index: 10; min-height: 290px;">
 							<datepicker [(ngModel)]="booking.dateTo" [showWeeks]="false" [minDate]="booking.dateFrom"
 								(selectionDone)="showDatePickerEnd = false"></datepicker>

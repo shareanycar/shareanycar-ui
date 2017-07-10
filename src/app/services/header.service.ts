@@ -1,23 +1,33 @@
 import { Injectable } from '@angular/core';
 import { Headers } from '@angular/http';
+import { CookieService } from 'ng2-cookies';
 
 
 @Injectable()
 export class HeaderService {
 
-    constructor() { }
+    constructor(private cookieService: CookieService) { }
 
     header: Headers = new Headers( {
         'Content-Type': 'application/json'
     });
 
     token: string;
-
+    
     authToken(): string {
+        if(this.cookieService.check("token")){
+            this.token = 'Bearer ' + this.cookieService.get("token");
+        }
         return this.token;
     }
 
     headers(): Headers {
+        if(this.cookieService.check("token")){
+            this.header = new Headers( {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + this.cookieService.get("token")
+            });
+        }
         return this.header;
     }
 
@@ -27,6 +37,7 @@ export class HeaderService {
             'Authorization': 'Bearer ' + token
         });
         this.token = 'Bearer ' + token;
+        this.cookieService.set("token",token);
 
     }
 
@@ -36,6 +47,7 @@ export class HeaderService {
         });
 
         this.token = '';
+        this.cookieService.delete("token");
     }
 
 
