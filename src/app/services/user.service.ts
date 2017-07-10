@@ -22,7 +22,6 @@ export class UserService {
     create( user: User ): Promise<any> {
         return this.http
             .post( AppSettings.API_ENDPOINT + "user", JSON.stringify( user ), { headers: this.headerService.headers() })
-
             .toPromise()
             .catch( this.handleError );
     }
